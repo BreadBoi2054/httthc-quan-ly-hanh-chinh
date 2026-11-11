@@ -208,7 +208,7 @@ function StaffDossiersListContent() {
                 ])
               )
             }
-            className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-bold border border-[#1e3a5f] text-[#1e3a5f] bg-white hover:bg-[#f0f4f8] disabled:opacity-50 rounded-[2px] cursor-pointer"
+            className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-bold border border-[#ce1126] text-[#991b1b] bg-white hover:bg-[#fef2f2] disabled:opacity-50 rounded-[2px] cursor-pointer"
           >
             <Download className="w-4 h-4" />
             Xuất Sổ CSV (Excel)
@@ -228,7 +228,7 @@ function StaffDossiersListContent() {
       </div>
 
       {/* Bộ lọc nghiệp vụ */}
-      <div className="bg-[#faf8f5] border border-[#d6d3cd] p-4 rounded-[2px] space-y-3 text-xs">
+      <div className="bg-[#fffdf5] border border-[#d6d3cd] p-4 rounded-[2px] space-y-3 text-xs">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3">
           <div className="lg:col-span-4">
             <label className="block font-semibold mb-1">Tìm kiếm Mã HS / Họ tên / CCCD</label>
@@ -319,7 +319,7 @@ function StaffDossiersListContent() {
       <div className="border border-[#d6d3cd] rounded-[2px] overflow-x-auto">
         <table className="w-full text-xs border-collapse">
           <thead>
-            <tr className="bg-[#faf8f5] border-b border-[#d6d3cd] text-left text-[#374151]">
+            <tr className="bg-[#fffdf5] border-b border-[#d6d3cd] text-left text-[#374151]">
               <th className="px-3.5 py-2.5 font-bold">Mã biên nhận</th>
               <th className="px-3.5 py-2.5 font-bold">Chủ hồ sơ</th>
               <th className="px-3.5 py-2.5 font-bold">Thủ tục &amp; Phòng ban</th>
@@ -343,7 +343,7 @@ function StaffDossiersListContent() {
               </tr>
             ) : (
               dossiers.map((d) => (
-                <tr key={d.id} className="hover:bg-[#faf8f5]">
+                <tr key={d.id} className="hover:bg-[#fffdf5]">
                   <td className="px-3.5 py-3 align-top tabular-nums">
                     <Link
                       href={`/he-thong/ho-so/${d.id}`}
@@ -395,7 +395,7 @@ function StaffDossiersListContent() {
                   <td className="px-3.5 py-3 align-top text-right">
                     <Link
                       href={`/he-thong/ho-so/${d.id}`}
-                      className="inline-flex items-center px-3 py-1.5 text-xs font-bold bg-[#1e3a5f] hover:bg-[#152c4a] text-white rounded-[2px]"
+                      className="inline-flex items-center px-3 py-1.5 text-xs font-bold bg-[#ce1126] hover:bg-[#991b1b] text-white rounded-[2px]"
                     >
                       Mở hồ sơ
                     </Link>

@@ -164,8 +164,8 @@ function LoginContent() {
       <div className="lg:col-span-7 bg-white border border-[#d6d3cd] p-6 rounded-[2px]">
         <div className="flex items-center justify-between border-b border-[#e5e7eb] pb-3 mb-4">
           <div className="flex items-center gap-2">
-            <UserCog className="w-5 h-5 text-[#1e3a5f]" />
-            <h2 className="text-base font-bold text-[#1e3a5f] uppercase font-official-serif">
+            <UserCog className="w-5 h-5 text-[#991b1b]" />
+            <h2 className="text-base font-bold text-[#991b1b] uppercase font-official-serif">
               Danh sách Tài khoản Phân quyền Nghiệp vụ (5 Vai trò)
             </h2>
           </div>
@@ -189,7 +189,7 @@ function LoginContent() {
                 setPassword("HanhChinh@2026");
                 performLogin(acc.username, "HanhChinh@2026");
               }}
-              className="text-left p-3.5 border border-[#d6d3cd] hover:border-[#991b1b] hover:bg-[#faf8f5] rounded-[2px] transition-colors cursor-pointer"
+              className="text-left p-3.5 border border-[#d6d3cd] hover:border-[#991b1b] hover:bg-[#fffdf5] rounded-[2px] transition-colors cursor-pointer"
             >
               <div className="flex items-center justify-between gap-2">
                 <span className="text-xs font-bold text-[#991b1b] uppercase">{acc.roleLabel}</span>

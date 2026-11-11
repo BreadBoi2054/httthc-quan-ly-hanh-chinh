@@ -280,7 +280,7 @@ export default function CitizenPortalPage() {
 
                     <Link
                       href={`/tra-cuu?code=${d.dossierCode}&pin=${d.trackingPin}`}
-                      className="inline-flex items-center gap-1 px-3 py-1.5 bg-[#1e3a5f] hover:bg-[#152c4a] text-white font-semibold rounded-[2px]"
+                      className="inline-flex items-center gap-1 px-3 py-1.5 bg-[#ce1126] hover:bg-[#991b1b] text-white font-semibold rounded-[2px]"
                     >
                       <ExternalLink className="w-3.5 h-3.5" />
                       Biểu mẫu &amp; Nhật ký xử lý

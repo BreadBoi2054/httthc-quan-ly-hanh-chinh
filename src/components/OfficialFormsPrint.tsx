@@ -222,16 +222,16 @@ export function OfficialFormsPrintModal({
       >
         <div className="official-print-card bg-white w-full max-w-4xl border border-[#111827] shadow-xl rounded-[2px]">
           {/* Thanh điều khiển không hiển thị khi in */}
-          <div className="no-print bg-[#1e3a5f] text-white px-4 sm:px-5 py-3 flex flex-wrap items-center justify-between gap-2">
+          <div className="no-print bg-[#b91c1c] text-white px-4 sm:px-5 py-3 flex flex-wrap items-center justify-between gap-2 border-b-2 border-[#f59e0b]">
             <div>
-              <p className="text-xs text-[#fde68a] font-medium">{titles[formType].code}</p>
+              <p className="text-xs text-[#fef08a] font-medium">{titles[formType].code}</p>
               <p className="text-sm font-bold">{titles[formType].name}</p>
             </div>
             <div className="flex items-center gap-2">
               <button
                 type="button"
                 onClick={() => window.print()}
-                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-bold bg-[#f59e0b] text-[#111827] hover:bg-[#fbbf24] rounded-[2px] cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-bold bg-[#fce8a6] text-[#881318] hover:bg-[#fef08a] rounded-[2px] cursor-pointer"
               >
                 <Printer className="w-4 h-4" />
                 In biểu mẫu khổ A4
@@ -239,7 +239,7 @@ export function OfficialFormsPrintModal({
               <button
                 type="button"
                 onClick={onClose}
-                className="inline-flex items-center gap-1 px-3 py-1.5 text-xs bg-white/10 hover:bg-white/20 rounded-[2px] cursor-pointer"
+                className="inline-flex items-center gap-1 px-3 py-1.5 text-xs bg-white/15 hover:bg-white/25 rounded-[2px] cursor-pointer"
               >
                 <X className="w-4 h-4" />
                 Đóng
@@ -251,7 +251,7 @@ export function OfficialFormsPrintModal({
           <div className="a4-print-sheet p-5 sm:p-12 text-[#000000] font-official-serif leading-relaxed text-[14px]">
             <div className="grid grid-cols-1 sm:grid-cols-12 print:grid-cols-12 gap-4 text-center mb-6">
               <div className="sm:col-span-5 print:col-span-5">
-                <p className="font-bold uppercase text-[12px]">ỦY BAN NHÂN DÂN PHƯỜNG TÂN BÌNH</p>
+                <p className="font-bold uppercase text-[12px]">ỦY BAN NHÂN DÂN PHƯỜNG THANH NHÀN</p>
                 <p className="font-bold uppercase text-[12px]">BỘ PHẬN TIẾP NHẬN VÀ TRẢ KẾT QUẢ</p>
                 <div className="w-24 h-[1px] bg-black mx-auto mt-1" />
                 <p className="text-[12px] mt-1.5 tabular-nums">
@@ -263,7 +263,7 @@ export function OfficialFormsPrintModal({
                 <p className="font-bold text-[13px]">Độc lập - Tự do - Hạnh phúc</p>
                 <div className="w-36 h-[1px] bg-black mx-auto mt-1" />
                 <p className="italic text-[12px] mt-1.5">
-                  Tân Bình, ngày {day} tháng {month} năm {year}
+                  Thanh Nhàn, ngày {day} tháng {month} năm {year}
                 </p>
               </div>
             </div>
@@ -284,7 +284,7 @@ export function OfficialFormsPrintModal({
 
           <div className="space-y-2.5 text-[14px]">
             <p>
-              <strong>Bộ phận Tiếp nhận và Trả kết quả - UBND Phường Tân Bình</strong> xác nhận thông tin đối với ông/bà (tổ chức):
+              <strong>Bộ phận Tiếp nhận và Trả kết quả - UBND Phường Thanh Nhàn</strong> xác nhận thông tin đối với ông/bà (tổ chức):
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 print:grid-cols-2 gap-x-6 gap-y-1.5 pl-2">
               <p>
@@ -395,7 +395,7 @@ export function OfficialFormsPrintModal({
             {formType === "MAU_04" && (
               <div className="mt-4 p-3 border border-black space-y-2">
                 <p>
-                  Ủy ban nhân dân Phường Tân Bình trân trọng xin lỗi ông/bà <strong>{dossier.applicantName}</strong> về sự chậm trễ trong việc trả kết quả giải quyết hồ sơ mã số <strong>{dossier.dossierCode}</strong>.
+                  Ủy ban nhân dân Phường Thanh Nhàn trân trọng xin lỗi ông/bà <strong>{dossier.applicantName}</strong> về sự chậm trễ trong việc trả kết quả giải quyết hồ sơ mã số <strong>{dossier.dossierCode}</strong>.
                 </p>
                 <p>
                   <strong>Lý do gia hạn thời gian giải quyết:</strong>{" "}
@@ -480,7 +480,7 @@ export function OfficialFormsPrintModal({
               <p className="italic text-[12px]">(Ký tên, xác thực điện tử)</p>
               <div className="h-16 sm:h-20 flex items-center justify-center">
                 <div className="inline-block border-2 border-[#b91c1c] text-[#b91c1c] px-3 py-1 rounded-[2px] text-[11px] font-bold uppercase tracking-wider rotate-[-3deg]">
-                  ĐÃ XÁC THỰC ĐIỆN TỬ • UBND P. TÂN BÌNH
+                  ĐÃ XÁC THỰC ĐIỆN TỬ • UBND P. THANH NHÀN
                 </div>
               </div>
               <p className="font-semibold">

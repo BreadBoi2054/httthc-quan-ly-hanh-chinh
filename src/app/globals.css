@@ -1,19 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  /* Bảng màu chuẩn Cổng Hành chính Công Việt Nam (Đỏ Quốc kỳ - Vàng đồng - Giấy công vụ) */
-  --vn-crimson: #991b1b;
-  --vn-crimson-dark: #7f1d1d;
+  /* Bảng màu Cổng Dịch vụ Hành chính Công Việt Nam (Vàng kem Hoàng gia - Đỏ cờ - Trắng sáng) */
+  --vn-crimson: #ce1126;
+  --vn-crimson-dark: #991b1b;
   --vn-crimson-soft: #fef2f2;
   --vn-gold: #d97706;
   --vn-gold-bright: #f59e0b;
-  --vn-gold-pale: #fef3c7;
-  --vn-navy: #1e3a5f;
-  --vn-paper: #f7f5f0;
+  --vn-gold-pale: #fce8a6;
+  --vn-cream-hero: #fff2c2;
+  --vn-paper: #f4f4f5;
   --vn-sheet: #ffffff;
   --vn-ink: #111827;
   --vn-muted: #4b5563;
-  --vn-border: #d6d3cd;
+  --vn-border: #ded8c8;
   --vn-positive: #15803d;
   --vn-warning: #b45309;
   --vn-danger: #b91c1c;

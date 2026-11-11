@@ -219,14 +219,14 @@ function SubmitDossierForm() {
             </div>
           </div>
 
-          <div className="bg-[#faf8f5] border border-[#d6d3cd] p-4 rounded-[2px] grid grid-cols-1 sm:grid-cols-2 gap-4 tabular-nums">
+          <div className="bg-[#fffdf5] border border-[#d6d3cd] p-4 rounded-[2px] grid grid-cols-1 sm:grid-cols-2 gap-4 tabular-nums">
             <div>
               <p className="text-xs text-[#4b5563]">Mã số biên nhận hồ sơ</p>
               <p className="text-xl font-bold text-[#991b1b] mt-0.5">{createdResult.dossierCode}</p>
             </div>
             <div>
               <p className="text-xs text-[#4b5563]">Mã PIN bảo mật tra cứu &amp; in phiếu</p>
-              <p className="text-xl font-bold text-[#1e3a5f] mt-0.5">{createdResult.trackingPin}</p>
+              <p className="text-xl font-bold text-[#991b1b] mt-0.5">{createdResult.trackingPin}</p>
             </div>
             <div className="sm:col-span-2 text-xs text-[#374151]">
               Thủ tục đăng ký: <strong>{createdResult.procedureName}</strong>. Vui lòng lưu lại <strong>Mã số hồ sơ</strong> và <strong>Mã PIN bảo mật</strong> để tra cứu tiến độ, nộp lệ phí trực tuyến hoặc tải kết quả điện tử.
@@ -289,7 +289,7 @@ function SubmitDossierForm() {
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* Khối 1: Chọn Thủ tục hành chính */}
         <div className="bg-white border border-[#d6d3cd] p-5 rounded-[2px] space-y-4">
-          <h2 className="text-sm font-bold uppercase text-[#1e3a5f] border-b border-[#e5e7eb] pb-2">
+          <h2 className="text-sm font-bold uppercase text-[#991b1b] border-b border-[#e5e7eb] pb-2">
             I. Chọn Thủ tục Hành chính đề nghị giải quyết
           </h2>
 
@@ -313,7 +313,7 @@ function SubmitDossierForm() {
           </div>
 
           {selectedProc && (
-            <div className="bg-[#faf8f5] border border-[#e5e7eb] p-3.5 text-xs grid grid-cols-1 sm:grid-cols-3 gap-3 tabular-nums">
+            <div className="bg-[#fffdf5] border border-[#e5e7eb] p-3.5 text-xs grid grid-cols-1 sm:grid-cols-3 gap-3 tabular-nums">
               <div>
                 <span className="text-[#4b5563] block">Cơ quan chuyên môn thụ lý:</span>
                 <strong className="text-[#111827]">{selectedProc.department.name}</strong>
@@ -340,7 +340,7 @@ function SubmitDossierForm() {
 
         {/* Khối 2: Thông tin Chủ hồ sơ & Ủy quyền */}
         <div className="bg-white border border-[#d6d3cd] p-5 rounded-[2px] space-y-4">
-          <h2 className="text-sm font-bold uppercase text-[#1e3a5f] border-b border-[#e5e7eb] pb-2">
+          <h2 className="text-sm font-bold uppercase text-[#991b1b] border-b border-[#e5e7eb] pb-2">
             II. Thông tin Cá nhân / Tổ chức đứng tên hồ sơ
           </h2>
 
@@ -452,7 +452,7 @@ function SubmitDossierForm() {
 
           {/* Tùy chọn Ủy quyền nộp thay */}
           <div className="pt-2 border-t border-[#f3f4f6] space-y-3">
-            <label className="inline-flex items-center gap-2 text-xs font-semibold text-[#1e3a5f] cursor-pointer">
+            <label className="inline-flex items-center gap-2 text-xs font-semibold text-[#991b1b] cursor-pointer">
               <input
                 type="checkbox"
                 checked={hasAuthorization}
@@ -463,7 +463,7 @@ function SubmitDossierForm() {
             </label>
 
             {hasAuthorization && (
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 bg-[#faf8f5] p-3.5 border border-[#d6d3cd] rounded-[2px]">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 bg-[#fffdf5] p-3.5 border border-[#d6d3cd] rounded-[2px]">
                 <div>
                   <label className="block text-xs font-semibold mb-1">Họ tên người được ủy quyền *</label>
                   <input
@@ -545,7 +545,7 @@ function SubmitDossierForm() {
         {selectedProc && (
           <div className="bg-white border border-[#d6d3cd] p-5 rounded-[2px] space-y-4">
             <div className="border-b border-[#e5e7eb] pb-2 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-              <h2 className="text-sm font-bold uppercase text-[#1e3a5f]">
+              <h2 className="text-sm font-bold uppercase text-[#991b1b]">
                 III. Thành phần Hồ sơ Đính kèm theo Danh mục Công bố
               </h2>
               {vaultItems.length > 0 && (
@@ -557,7 +557,7 @@ function SubmitDossierForm() {
             </div>
 
             {vaultItems.length > 0 && (
-              <div className="p-3 bg-[#faf8f5] border border-[#d6d3cd] rounded-[2px] text-xs space-y-2">
+              <div className="p-3 bg-[#fffdf5] border border-[#d6d3cd] rounded-[2px] text-xs space-y-2">
                 <p className="font-semibold text-[#111827]">
                   Tái sử dụng giấy tờ, kết quả điện tử đã được cơ quan nhà nước số hóa (không phải nộp lại bản sao):
                 </p>
@@ -572,7 +572,7 @@ function SubmitDossierForm() {
                         className="p-2.5 bg-white border border-[#d6d3cd] rounded-[2px] flex items-center justify-between gap-2"
                       >
                         <div className="min-w-0">
-                          <p className="font-bold text-[#1e3a5f] truncate">{item.title}</p>
+                          <p className="font-bold text-[#991b1b] truncate">{item.title}</p>
                           <p className="text-[11px] text-[#4b5563] truncate">{item.issuedInfo}</p>
                         </div>
                         {matchedDoc && (
@@ -594,7 +594,7 @@ function SubmitDossierForm() {
             <div className="overflow-x-auto">
               <table className="w-full text-xs border border-[#d6d3cd] border-collapse">
                 <thead>
-                  <tr className="bg-[#faf8f5] text-left">
+                  <tr className="bg-[#fffdf5] text-left">
                     <th className="border border-[#d6d3cd] px-3 py-2 w-12 text-center">Nộp</th>
                     <th className="border border-[#d6d3cd] px-3 py-2">Tên giấy tờ, thành phần hồ sơ</th>
                     <th className="border border-[#d6d3cd] px-3 py-2 w-24 text-center">Quy định</th>

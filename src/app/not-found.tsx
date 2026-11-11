@@ -31,7 +31,7 @@ export default function NotFoundPage() {
             </Link>
             <Link
               href="/tra-cuu"
-              className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-bold uppercase border border-[#1e3a5f] text-[#1e3a5f] hover:bg-[#f0f4f8] rounded-[2px]"
+              className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-bold uppercase border border-[#ce1126] text-[#991b1b] hover:bg-[#fef2f2] rounded-[2px]"
             >
               <Search className="w-4 h-4" />
               Tra cứu Tiến độ Hồ sơ

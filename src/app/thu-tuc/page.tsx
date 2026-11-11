@@ -176,7 +176,7 @@ function ProceduresCatalogContent() {
                 <div className="p-4 sm:p-5 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
                   <div className="space-y-1.5">
                     <div className="flex items-center gap-2 flex-wrap">
-                      <span className="text-xs font-bold bg-[#1e3a5f] text-white px-2 py-0.5 rounded-[2px] tabular-nums">
+                      <span className="text-xs font-bold bg-[#ce1126] text-white px-2 py-0.5 rounded-[2px] tabular-nums">
                         Mã TTHC: {proc.code}
                       </span>
                       <span className="text-xs font-semibold bg-[#f3f4f6] text-[#111827] px-2 py-0.5 border border-[#d1d5db] rounded-[2px]">
@@ -246,7 +246,7 @@ function ProceduresCatalogContent() {
                 </div>
 
                 {isOpen && (
-                  <div className="border-t border-[#e5e7eb] bg-[#faf8f5] p-4 sm:p-5 grid grid-cols-1 lg:grid-cols-12 gap-5 text-sm">
+                  <div className="border-t border-[#e5e7eb] bg-[#fffdf5] p-4 sm:p-5 grid grid-cols-1 lg:grid-cols-12 gap-5 text-sm">
                     <div className="lg:col-span-6 space-y-3">
                       <div>
                         <p className="font-bold text-xs uppercase text-[#991b1b] mb-1">

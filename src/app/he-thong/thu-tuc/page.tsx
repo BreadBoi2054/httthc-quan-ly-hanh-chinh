@@ -288,7 +288,7 @@ export default function InternalProceduresPage() {
       )}
 
       {/* Thanh tra cứu */}
-      <div className="bg-[#f4f1ea] p-3.5 border border-[#d6d3cd] rounded-[2px] text-xs space-y-2.5">
+      <div className="bg-[#fff8dc] p-3.5 border border-[#d6d3cd] rounded-[2px] text-xs space-y-2.5">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-3">
           <div className="md:col-span-4">
             <select
@@ -341,7 +341,7 @@ export default function InternalProceduresPage() {
       <div className="border border-[#d6d3cd] rounded-[2px] overflow-x-auto">
         <table className="w-full text-xs border-collapse">
           <thead>
-            <tr className="bg-[#f4f1ea] border-b border-[#d6d3cd] text-[#1e3a5f]">
+            <tr className="bg-[#fff8dc] border-b border-[#d6d3cd] text-[#991b1b]">
               <th className="py-2.5 px-3 text-left">Mã TTHC</th>
               <th className="py-2.5 px-3 text-left">Tên Thủ tục &amp; Căn cứ pháp lý</th>
               <th className="py-2.5 px-3 text-left">Đơn vị thụ lý</th>
@@ -379,7 +379,7 @@ export default function InternalProceduresPage() {
                   <td className="py-3 px-3 max-w-md">
                     <p className="font-bold text-[#111827]">{p.name}</p>
                     <p className="text-[#4b5563] mt-0.5">Căn cứ: {p.legalBasis}</p>
-                    <p className="text-[11px] text-[#1e3a5f] mt-1">
+                    <p className="text-[11px] text-[#991b1b] mt-1">
                       Thành phần bắt buộc:{" "}
                       {p.requiredDocs.filter((d) => d.mandatory).length}/
                       {p.requiredDocs.length} giấy tờ • Kết quả: {p.resultTemplate}
@@ -419,7 +419,7 @@ export default function InternalProceduresPage() {
                       ? "Miễn phí"
                       : `${p.feeAmount.toLocaleString("vi-VN")} đ${p.feePerCopy ? "/bản" : ""}`}
                   </td>
-                  <td className="py-3 px-3 text-center tabular-nums font-bold text-[#1e3a5f]">
+                  <td className="py-3 px-3 text-center tabular-nums font-bold text-[#991b1b]">
                     {p._count?.dossiers ?? 0}
                   </td>
                   {userRole === "QUAN_TRI" && (
@@ -427,7 +427,7 @@ export default function InternalProceduresPage() {
                       <button
                         type="button"
                         onClick={() => openEditModal(p)}
-                        className="inline-flex items-center gap-1 px-2.5 py-1.5 font-semibold border border-[#1e3a5f] text-[#1e3a5f] bg-white hover:bg-[#1e3a5f] hover:text-white rounded-[2px] cursor-pointer transition-colors"
+                        className="inline-flex items-center gap-1 px-2.5 py-1.5 font-semibold border border-[#ce1126] text-[#991b1b] bg-white hover:bg-[#991b1b] hover:text-white rounded-[2px] cursor-pointer transition-colors"
                       >
                         <Settings2 className="w-3.5 h-3.5" />
                         Hiệu chỉnh
@@ -575,7 +575,7 @@ export default function InternalProceduresPage() {
                 </div>
               </div>
 
-              <label className="inline-flex items-center gap-2 font-semibold text-[#1e3a5f] cursor-pointer">
+              <label className="inline-flex items-center gap-2 font-semibold text-[#991b1b] cursor-pointer">
                 <input
                   type="checkbox"
                   checked={feePerCopy}
@@ -622,15 +622,15 @@ export default function InternalProceduresPage() {
               </div>
 
               {/* Thành phần hồ sơ */}
-              <div className="space-y-2 p-3 bg-[#f4f1ea] border border-[#d6d3cd]">
+              <div className="space-y-2 p-3 bg-[#fff8dc] border border-[#d6d3cd]">
                 <div className="flex items-center justify-between">
-                  <span className="font-bold text-[#1e3a5f]">
+                  <span className="font-bold text-[#991b1b]">
                     Thành phần giấy tờ yêu cầu ({requiredDocs.length} mục):
                   </span>
                   <button
                     type="button"
                     onClick={addDocRow}
-                    className="px-2 py-1 bg-[#1e3a5f] text-white font-semibold rounded-[2px] cursor-pointer"
+                    className="px-2 py-1 bg-[#ce1126] text-white font-semibold rounded-[2px] cursor-pointer"
                   >
                     + Thêm thành phần
                   </button>
@@ -723,7 +723,7 @@ export default function InternalProceduresPage() {
             aria-modal="true"
             className="bg-white border border-[#111827] w-full max-w-lg rounded-[2px] shadow-xl"
           >
-            <div className="bg-[#1e3a5f] text-white px-5 py-3 flex items-center justify-between">
+            <div className="bg-[#ce1126] text-white px-5 py-3 flex items-center justify-between">
               <div>
                 <p className="text-[11px] text-[#fde68a] font-semibold">Mã TTHC: {editingProc.code}</p>
                 <h2 className="text-sm font-bold uppercase">
@@ -751,7 +751,7 @@ export default function InternalProceduresPage() {
                 </div>
               )}
 
-              <div className="p-3 bg-[#f4f1ea] border border-[#d6d3cd]">
+              <div className="p-3 bg-[#fff8dc] border border-[#d6d3cd]">
                 <p className="font-bold text-[#111827]">{editingProc.name}</p>
                 <p className="text-[#4b5563] mt-0.5">{editingProc.department.name}</p>
               </div>
@@ -814,7 +814,7 @@ export default function InternalProceduresPage() {
                 </div>
               </div>
 
-              <label className="inline-flex items-center gap-2 font-semibold text-[#1e3a5f] cursor-pointer">
+              <label className="inline-flex items-center gap-2 font-semibold text-[#991b1b] cursor-pointer">
                 <input
                   type="checkbox"
                   checked={editFeePerCopy}

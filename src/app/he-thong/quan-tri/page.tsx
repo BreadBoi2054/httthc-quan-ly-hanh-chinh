@@ -160,9 +160,9 @@ export default function AdminGovernancePage() {
       {/* Hàng 1: Phòng ban & Lịch nghỉ lễ SLA */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         <section className="lg:col-span-7 border border-[#d6d3cd] rounded-[2px] overflow-hidden">
-          <div className="bg-[#f4f1ea] px-4 py-2.5 border-b border-[#d6d3cd] flex items-center gap-2">
+          <div className="bg-[#fff8dc] px-4 py-2.5 border-b border-[#d6d3cd] flex items-center gap-2">
             <Building2 className="w-4 h-4 text-[#991b1b]" />
-            <h2 className="text-xs font-bold uppercase tracking-wider text-[#1e3a5f]">
+            <h2 className="text-xs font-bold uppercase tracking-wider text-[#991b1b]">
               1. Cơ cấu Phòng ban / Bộ phận Chuyên môn ({departments.length} đơn vị)
             </h2>
           </div>
@@ -184,7 +184,7 @@ export default function AdminGovernancePage() {
                     <td className="py-2.5 px-3 text-[#4b5563] tabular-nums">
                       {d.roomNumber} (Ext: {d.phoneExt})
                     </td>
-                    <td className="py-2.5 px-3 font-medium text-[#1e3a5f]">{d.headTitle}</td>
+                    <td className="py-2.5 px-3 font-medium text-[#991b1b]">{d.headTitle}</td>
                   </tr>
                 ))}
               </tbody>
@@ -193,9 +193,9 @@ export default function AdminGovernancePage() {
         </section>
 
         <section className="lg:col-span-5 border border-[#d6d3cd] rounded-[2px] overflow-hidden flex flex-col">
-          <div className="bg-[#f4f1ea] px-4 py-2.5 border-b border-[#d6d3cd] flex items-center gap-2">
-            <CalendarDays className="w-4 h-4 text-[#1e3a5f]" />
-            <h2 className="text-xs font-bold uppercase tracking-wider text-[#1e3a5f]">
+          <div className="bg-[#fff8dc] px-4 py-2.5 border-b border-[#d6d3cd] flex items-center gap-2">
+            <CalendarDays className="w-4 h-4 text-[#991b1b]" />
+            <h2 className="text-xs font-bold uppercase tracking-wider text-[#991b1b]">
               2. Lịch Nghỉ Lễ Loại trừ Khỏi SLA ({holidays.length} ngày)
             </h2>
           </div>
@@ -203,7 +203,7 @@ export default function AdminGovernancePage() {
           {currentRole === "QUAN_TRI" && (
             <form
               onSubmit={handleAddHoliday}
-              className="p-3 bg-[#faf8f5] border-b border-[#d6d3cd] grid grid-cols-12 gap-2 text-xs"
+              className="p-3 bg-[#fffdf5] border-b border-[#d6d3cd] grid grid-cols-12 gap-2 text-xs"
             >
               <input
                 type="date"
@@ -274,9 +274,9 @@ export default function AdminGovernancePage() {
 
       {/* Hàng 2: Danh sách cán bộ & Phân quyền RBAC/ABAC */}
       <section className="border border-[#d6d3cd] rounded-[2px] overflow-hidden">
-        <div className="bg-[#f4f1ea] px-4 py-2.5 border-b border-[#d6d3cd] flex items-center gap-2">
-          <Users className="w-4 h-4 text-[#1e3a5f]" />
-          <h2 className="text-xs font-bold uppercase tracking-wider text-[#1e3a5f]">
+        <div className="bg-[#fff8dc] px-4 py-2.5 border-b border-[#d6d3cd] flex items-center gap-2">
+          <Users className="w-4 h-4 text-[#991b1b]" />
+          <h2 className="text-xs font-bold uppercase tracking-wider text-[#991b1b]">
             3. Danh sách Công chức, Viên chức &amp; Phân quyền Thẩm quyền ({staffUsers.length} tài khoản nội bộ)
           </h2>
         </div>
@@ -294,7 +294,7 @@ export default function AdminGovernancePage() {
             <tbody className="divide-y divide-[#e5e7eb]">
               {staffUsers.map((u) => (
                 <tr key={u.id} className="hover:bg-[#fafaf9]">
-                  <td className="py-2.5 px-3 font-mono font-semibold text-[#1e3a5f]">
+                  <td className="py-2.5 px-3 font-mono font-semibold text-[#991b1b]">
                     {u.username}
                   </td>
                   <td className="py-2.5 px-3 font-bold text-[#111827]">{u.fullName}</td>
@@ -314,9 +314,9 @@ export default function AdminGovernancePage() {
 
       {/* Hàng 3: Nhật ký Kiểm toán Bất biến (Audit Log - Giới hạn QUAN_TRI & LANH_DAO) */}
       <section className="border border-[#d6d3cd] rounded-[2px] overflow-hidden">
-        <div className="bg-[#f4f1ea] px-4 py-2.5 border-b border-[#d6d3cd] flex items-center gap-2">
+        <div className="bg-[#fff8dc] px-4 py-2.5 border-b border-[#d6d3cd] flex items-center gap-2">
           <ShieldCheck className="w-4 h-4 text-[#991b1b]" />
-          <h2 className="text-xs font-bold uppercase tracking-wider text-[#1e3a5f]">
+          <h2 className="text-xs font-bold uppercase tracking-wider text-[#991b1b]">
             4. Nhật ký Kiểm toán Hệ thống Bất biến (Immutable Audit Trail)
           </h2>
         </div>
@@ -349,7 +349,7 @@ export default function AdminGovernancePage() {
                     <td className="py-2.5 px-3 font-mono font-bold text-[#991b1b] whitespace-nowrap">
                       {log.action}
                     </td>
-                    <td className="py-2.5 px-3 whitespace-nowrap font-semibold text-[#1e3a5f]">
+                    <td className="py-2.5 px-3 whitespace-nowrap font-semibold text-[#991b1b]">
                       [{log.entityType}] {log.entityCode}
                     </td>
                     <td className="py-2.5 px-3 text-[#374151]">{log.detail}</td>

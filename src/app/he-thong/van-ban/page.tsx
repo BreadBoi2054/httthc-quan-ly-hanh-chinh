@@ -123,8 +123,8 @@ export default function OfficialDocumentsPage() {
   const [newSecurity, setNewSecurity] = useState<"THUONG" | "MAT" | "TOI_MAT">("THUONG");
   const [newTitle, setNewTitle] = useState("");
   const [newSummary, setNewSummary] = useState("");
-  const [newIssuingAgency, setNewIssuingAgency] = useState("UBND Quận Tân Bình");
-  const [newRecipientAgency, setNewRecipientAgency] = useState("UBND Phường Tân Bình");
+  const [newIssuingAgency, setNewIssuingAgency] = useState("UBND Quận Hai Bà Trưng");
+  const [newRecipientAgency, setNewRecipientAgency] = useState("UBND Phường Thanh Nhàn");
   const [newIssuedDate, setNewIssuedDate] = useState(
     new Date().toISOString().slice(0, 10)
   );
@@ -407,7 +407,7 @@ export default function OfficialDocumentsPage() {
                 ])
               )
             }
-            className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-bold border border-[#1e3a5f] text-[#1e3a5f] bg-white hover:bg-[#f0f4f8] disabled:opacity-50 rounded-[2px] cursor-pointer"
+            className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-bold border border-[#ce1126] text-[#991b1b] bg-white hover:bg-[#fef2f2] disabled:opacity-50 rounded-[2px] cursor-pointer"
           >
             <Download className="w-4 h-4" />
             Xuất Sổ CSV (Excel)
@@ -447,7 +447,7 @@ export default function OfficialDocumentsPage() {
       )}
 
       {/* Bộ lọc Luồng văn bản */}
-      <div className="bg-[#f4f1ea] p-3.5 border border-[#d6d3cd] rounded-[2px] text-xs space-y-2.5">
+      <div className="bg-[#fff8dc] p-3.5 border border-[#d6d3cd] rounded-[2px] text-xs space-y-2.5">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-3">
           <div className="md:col-span-4 flex gap-1.5">
             {[
@@ -461,7 +461,7 @@ export default function OfficialDocumentsPage() {
                 onClick={() => setDirectionFilter(tab.key as "ALL" | "DEN" | "DI")}
                 className={`flex-1 py-2 px-2.5 font-bold rounded-[2px] border cursor-pointer ${
                   directionFilter === tab.key
-                    ? "bg-[#1e3a5f] text-white border-[#1e3a5f]"
+                    ? "bg-[#ce1126] text-white border-[#ce1126]"
                     : "bg-white text-[#374151] border-[#d6d3cd] hover:bg-[#eae5da]"
                 }`}
               >
@@ -523,7 +523,7 @@ export default function OfficialDocumentsPage() {
       <div className="border border-[#d6d3cd] rounded-[2px] overflow-x-auto">
         <table className="w-full text-xs border-collapse">
           <thead>
-            <tr className="bg-[#f4f1ea] border-b border-[#d6d3cd] text-[#1e3a5f]">
+            <tr className="bg-[#fff8dc] border-b border-[#d6d3cd] text-[#991b1b]">
               <th className="py-2.5 px-3 text-left">Luồng / Số sổ</th>
               <th className="py-2.5 px-3 text-left">Số ký hiệu &amp; Ngày BH</th>
               <th className="py-2.5 px-3 text-left">Trích yếu nội dung &amp; Chỉ đạo điều hành</th>
@@ -561,7 +561,7 @@ export default function OfficialDocumentsPage() {
                           VB ĐẾN #{doc.incomingNumber || "---"}
                         </span>
                       ) : (
-                        <span className="inline-flex items-center gap-1 font-bold text-[#1e3a5f]">
+                        <span className="inline-flex items-center gap-1 font-bold text-[#991b1b]">
                           <ArrowUpRight className="w-3.5 h-3.5" />
                           VB ĐI {doc.outgoingNumber ? `#${doc.outgoingNumber}` : "(Dự thảo)"}
                         </span>
@@ -645,7 +645,7 @@ export default function OfficialDocumentsPage() {
                         <button
                           type="button"
                           onClick={() => openActionModal(doc)}
-                          className="inline-flex items-center gap-1 px-2.5 py-1.5 font-semibold border border-[#1e3a5f] text-[#1e3a5f] bg-white hover:bg-[#1e3a5f] hover:text-white rounded-[2px] cursor-pointer transition-colors"
+                          className="inline-flex items-center gap-1 px-2.5 py-1.5 font-semibold border border-[#ce1126] text-[#991b1b] bg-white hover:bg-[#991b1b] hover:text-white rounded-[2px] cursor-pointer transition-colors"
                         >
                           <FileSignature className="w-3.5 h-3.5" />
                           Điều hành
@@ -704,11 +704,11 @@ export default function OfficialDocumentsPage() {
                       const dir = e.target.value as "DEN" | "DI";
                       setNewDirection(dir);
                       if (dir === "DI") {
-                        setNewIssuingAgency("UBND Phường Tân Bình");
-                        setNewRecipientAgency("Phòng Tư pháp Quận Tân Bình");
+                        setNewIssuingAgency("UBND Phường Thanh Nhàn");
+                        setNewRecipientAgency("Phòng Tư pháp Quận Hai Bà Trưng");
                       } else {
-                        setNewIssuingAgency("UBND Quận Tân Bình");
-                        setNewRecipientAgency("UBND Phường Tân Bình");
+                        setNewIssuingAgency("UBND Quận Hai Bà Trưng");
+                        setNewRecipientAgency("UBND Phường Thanh Nhàn");
                       }
                     }}
                     className="w-full border border-[#9ca3af] px-2.5 py-2 rounded-[2px]"
@@ -907,7 +907,7 @@ export default function OfficialDocumentsPage() {
             aria-modal="true"
             className="bg-white border border-[#111827] w-full max-w-xl rounded-[2px] shadow-xl my-8"
           >
-            <div className="bg-[#1e3a5f] text-white px-5 py-3 flex items-center justify-between">
+            <div className="bg-[#ce1126] text-white px-5 py-3 flex items-center justify-between">
               <div>
                 <p className="text-[11px] text-[#fde68a] font-semibold">
                   [{activeDoc.direction === "DEN" ? "VĂN BẢN ĐẾN" : "VĂN BẢN ĐI"}] Số ký hiệu: {activeDoc.documentSymbol}
@@ -937,7 +937,7 @@ export default function OfficialDocumentsPage() {
                 </div>
               )}
 
-              <div className="p-3 bg-[#f4f1ea] border border-[#d6d3cd]">
+              <div className="p-3 bg-[#fff8dc] border border-[#d6d3cd]">
                 <p className="font-bold text-[#111827]">{activeDoc.title}</p>
                 <p className="text-[#4b5563] mt-1">{activeDoc.contentSummary}</p>
               </div>

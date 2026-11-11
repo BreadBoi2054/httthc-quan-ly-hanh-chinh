@@ -64,7 +64,7 @@ export async function GET(req: NextRequest) {
             code: ds.electronicResultCode || ds.resultDocNumber,
             title: `${ds.procedure.resultTemplate} (${ds.resultDocNumber})`,
             fileName: `KetQuaDienTu_${safeSymbol}.pdf`,
-            issuedInfo: `Hồ sơ ${ds.dossierCode} • Ký số UBND Phường Tân Bình`,
+            issuedInfo: `Hồ sơ ${ds.dossierCode} • Ký số UBND Phường Thanh Nhàn`,
           });
         }
       }

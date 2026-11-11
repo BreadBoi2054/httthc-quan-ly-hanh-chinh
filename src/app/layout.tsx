@@ -17,9 +17,9 @@ const notoSerif = Noto_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Hệ thống Thông tin Quản lý Hành chính & Một cửa Điện tử",
+  title: "Cổng Dịch vụ công & Một cửa Điện tử - UBND Phường Thanh Nhàn",
   description:
-    "Cổng Dịch vụ Hành chính công, Tiếp nhận & Giải quyết Hồ sơ Một cửa liên thông và Quản lý Văn bản Điều hành nội bộ.",
+    "Hệ thống Thông tin Quản lý Hành chính, Tiếp nhận & Giải quyết Hồ sơ Một cửa liên thông và Quản lý Văn bản Điều hành UBND Phường Thanh Nhàn.",
 };
 
 export default function RootLayout({
@@ -29,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="vi" className={`${beVietnamPro.variable} ${notoSerif.variable}`}>
-      <body className="min-h-screen flex flex-col bg-[#f7f5f0] text-[#111827]">
+      <body className="min-h-screen flex flex-col bg-[#f4f4f5] text-[#111827]">
         {children}
       </body>
     </html>

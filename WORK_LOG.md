@@ -158,3 +158,9 @@
 - Rà soát và đồng bộ 100% nội dung giữa tệp `SO_TAY_NGHIEP_VU.md` (bổ sung chi tiết phân quyền độ mật `MAT`/`TOI_MAT` NĐ 30/2020, luồng `TRA_LAI_DU_THAO`, cấp số nguyên tử `SequenceCounter`, quản trị `PATCH /api/procedures`, thu hồi phiên tức thời `isActive = false` và xác nhận trực tuyến 02 bước) với giao diện `/so-tay-nghiep-vu`.
 - Bổ sung `.env.example` mẫu an toàn, gia cố `.gitignore` chặn tuyệt đối `.env`, `.env.*`, `.playwright-mcp/`, `*.log`, `*.tsbuildinfo`, cập nhật `package.json` lên `2.0.0` và biên soạn `README.md` chuẩn hướng dẫn khởi chạy nhanh cho kho Git.
 - Khởi tạo kho Git cục bộ trên nhánh `main` (`git init -b main`) và đóng gói bản commit phát hành sạch không chứa khóa bí mật hay tệp sinh tự động.
+
+---
+
+## [Cập Nhật Giao Diện v2.1] Chuyển Đổi Tông Màu Vàng Kem – Đỏ Cờ – Hoa Sen & Đổi Đơn Vị Sang UBND Phường Thanh Nhàn
+- Giữ nguyên cấu trúc bố cục giao diện đã ổn định, chuyển đổi đồng bộ toàn bộ bảng màu từ tông Xanh đậm (`#1E3A5F`) cũ sang hệ màu **Cổng Dịch vụ công Vàng kem Hoàng gia (`#FCE8A6` / `#FFF1BD`) + Thanh điều hướng Đỏ cờ tươi (`#D71920` / `#CE1126`) + Họa tiết Hoa sen & Trống đồng SVG (`LotusGardenStrip`) + Phân lớp nền Trắng sáng (`#FFFFFF`) & Xám sáng (`#F3F4F6`)**.
+- Đổi đồng bộ 100% đơn vị hành chính sang **UBND Phường Thanh Nhàn** (Thành phố Hà Nội, mã vùng điện thoại `(024) 3971 0101`, địa chỉ phố Thanh Nhàn / Kim Ngưu / Võ Thị Sáu / Trần Khát Chân) trên toàn bộ Header, Footer, Bàn làm việc nội bộ, 06 Biểu mẫu in khổ A4, API Kho dữ liệu số, dữ liệu mẫu PostgreSQL (`prisma/seed.ts`) và tài liệu hướng dẫn.

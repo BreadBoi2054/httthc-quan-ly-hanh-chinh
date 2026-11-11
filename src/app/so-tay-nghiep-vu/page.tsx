@@ -24,7 +24,7 @@ export default function OperationalHandbookPage() {
 
         {/* Phần 1: Bảng phân vai RBAC */}
         <section className="bg-white border border-[#d6d3cd] p-6 rounded-[2px] space-y-4">
-          <h2 className="text-base font-bold uppercase text-[#1e3a5f] flex items-center gap-2 font-official-serif">
+          <h2 className="text-base font-bold uppercase text-[#991b1b] flex items-center gap-2 font-official-serif">
             <Users className="w-5 h-5 text-[#991b1b]" />
             1. Phân quyền Trách nhiệm 05 Vai trò Nghiệp vụ (RBAC &amp; ABAC)
           </h2>
@@ -32,7 +32,7 @@ export default function OperationalHandbookPage() {
           <div className="overflow-x-auto">
             <table className="w-full text-xs border border-[#d6d3cd] border-collapse">
               <thead>
-                <tr className="bg-[#faf8f5] text-left">
+                <tr className="bg-[#fffdf5] text-left">
                   <th className="border border-[#d6d3cd] px-3 py-2 w-40">Vai trò</th>
                   <th className="border border-[#d6d3cd] px-3 py-2 w-44">Tài khoản mẫu</th>
                   <th className="border border-[#d6d3cd] px-3 py-2">Thẩm quyền nghiệp vụ được phép</th>
@@ -51,7 +51,7 @@ export default function OperationalHandbookPage() {
                   </td>
                 </tr>
                 <tr>
-                  <td className="border border-[#d6d3cd] px-3 py-2 font-bold text-[#1e3a5f]">Cán bộ Một cửa</td>
+                  <td className="border border-[#d6d3cd] px-3 py-2 font-bold text-[#991b1b]">Cán bộ Một cửa</td>
                   <td className="border border-[#d6d3cd] px-3 py-2 font-mono">motcua</td>
                   <td className="border border-[#d6d3cd] px-3 py-2">
                     Tiếp nhận 01 bước tại quầy &amp; tự động phân công chuyên viên ít việc nhất, cấp Giấy hẹn (Mẫu 01), Yêu cầu bổ sung tối đa 01 lần (Mẫu 02), Từ chối tiếp nhận (Mẫu 03), Thu lệ phí (nhân tự động theo số bản sao nếu có), Trả kết quả.
@@ -61,7 +61,7 @@ export default function OperationalHandbookPage() {
                   </td>
                 </tr>
                 <tr>
-                  <td className="border border-[#d6d3cd] px-3 py-2 font-bold text-[#1e3a5f]">Chuyên viên Thụ lý</td>
+                  <td className="border border-[#d6d3cd] px-3 py-2 font-bold text-[#991b1b]">Chuyên viên Thụ lý</td>
                   <td className="border border-[#d6d3cd] px-3 py-2 font-mono">
                     chuyenvien.tuphap<br />chuyenvien.diachinh<br />chuyenvien.vhxh<br />chuyenvien.kinhte
                   </td>
@@ -73,7 +73,7 @@ export default function OperationalHandbookPage() {
                   </td>
                 </tr>
                 <tr>
-                  <td className="border border-[#d6d3cd] px-3 py-2 font-bold text-[#1e3a5f]">Lãnh đạo UBND</td>
+                  <td className="border border-[#d6d3cd] px-3 py-2 font-bold text-[#991b1b]">Lãnh đạo UBND</td>
                   <td className="border border-[#d6d3cd] px-3 py-2 font-mono">lanhdao</td>
                   <td className="border border-[#d6d3cd] px-3 py-2">
                     Ký duyệt kết quả TTHC (cấp mã kết quả điện tử <code>KQĐT-UBND-...</code> &amp; ghi Sổ văn bản đi), trả lại chuyên viên thẩm định lại, bút phê Văn bản đến, trả lại dự thảo hoặc ký ban hành Văn bản đi (cấp Số đi tự động).
@@ -83,7 +83,7 @@ export default function OperationalHandbookPage() {
                   </td>
                 </tr>
                 <tr>
-                  <td className="border border-[#d6d3cd] px-3 py-2 font-bold text-[#1e3a5f]">Quản trị &amp; Văn thư</td>
+                  <td className="border border-[#d6d3cd] px-3 py-2 font-bold text-[#991b1b]">Quản trị &amp; Văn thư</td>
                   <td className="border border-[#d6d3cd] px-3 py-2 font-mono">quantri</td>
                   <td className="border border-[#d6d3cd] px-3 py-2">
                     Công bố/hiệu chỉnh/tạm ngưng Danh mục TTHC, Vào sổ Văn bản đến/đi (kèm độ mật NĐ 30/2020), thêm/xóa động Lịch nghỉ lễ SLA, xuất Sổ đăng ký CSV (Excel), tra cứu Nhật ký Kiểm toán (Audit Log kèm IP).
@@ -148,7 +148,7 @@ export default function OperationalHandbookPage() {
 
         {/* Phần 3: Kịch bản thao tác thực hành nhanh */}
         <section className="bg-white border border-[#d6d3cd] p-6 rounded-[2px] space-y-3">
-          <h2 className="text-base font-bold uppercase text-[#1e3a5f] flex items-center gap-2 font-official-serif">
+          <h2 className="text-base font-bold uppercase text-[#991b1b] flex items-center gap-2 font-official-serif">
             <CheckSquare className="w-5 h-5 text-[#15803d]" />
             4. Kịch bản Thực hành Luồng Nghiệp vụ Khép kín (Từ Nộp hồ sơ đến Khảo sát SIPAS)
           </h2>
@@ -183,7 +183,7 @@ export default function OperationalHandbookPage() {
             </Link>
             <Link
               href="/tra-cuu?code=HS-20261106-0006&pin=528173"
-              className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold border border-[#1e3a5f] text-[#1e3a5f] rounded-[2px]"
+              className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold border border-[#ce1126] text-[#991b1b] rounded-[2px]"
             >
               <FileSpreadsheet className="w-4 h-4" />
               Xem thử Hồ sơ HS-20261106-0006 (Chờ thu phí trả kết quả)

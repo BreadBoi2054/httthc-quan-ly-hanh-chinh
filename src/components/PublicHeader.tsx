@@ -68,36 +68,36 @@ export function PublicHeader() {
   ];
 
   return (
-    <header className="no-print border-b-2 border-[#d97706] bg-[#991b1b] text-white relative overflow-hidden">
-      <div className="absolute right-4 -top-12 hidden lg:block">
+    <header className="no-print bg-[#fce8a6] text-[#3f1d14] relative overflow-hidden border-b border-[#e5c56b]">
+      <div className="absolute left-1/2 -translate-x-1/2 -top-10 hidden md:block">
         <BronzeDrumWatermark />
       </div>
 
       {/* Dải thông tin công vụ trên cùng */}
-      <div className="bg-[#7f1d1d] border-b border-[#b91c1c] text-xs text-[#fef3c7]">
+      <div className="bg-[#f8dc81] border-b border-[#e4be58] text-xs text-[#7f1d1d]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-1.5 flex flex-wrap items-center justify-between gap-2">
-          <div className="font-medium tracking-wide">
+          <div className="font-semibold tracking-wide">
             CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM • Độc lập - Tự do - Hạnh phúc
           </div>
-          <div className="flex items-center gap-4 tabular-nums">
-            <span>Đường dây nóng Một cửa: (028) 3811 0101</span>
+          <div className="flex items-center gap-4 tabular-nums font-medium">
+            <span>Đường dây nóng Một cửa: (024) 3971 0101</span>
             <span className="hidden sm:inline">|</span>
             <span className="hidden sm:inline">Giờ tiếp nhận: Thứ Hai - Thứ Sáu (07:30 - 17:00)</span>
           </div>
         </div>
       </div>
 
-      {/* Quốc hiệu & Tên hệ thống */}
+      {/* Quốc hiệu & Tên hệ thống trên nền Vàng kem, chữ Đỏ cờ */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <div className="flex items-center justify-between gap-3">
           <Link href="/" className="flex items-center gap-3.5 group">
-            <AdminEmblem size={52} />
+            <AdminEmblem size={56} />
             <div>
-              <p className="text-xs uppercase tracking-[0.12em] text-[#fde68a] font-semibold">
-                ỦY BAN NHÂN DÂN PHƯỜNG TÂN BÌNH • TRUNG TÂM PHỤC VỤ HÀNH CHÍNH CÔNG
+              <p className="text-xs uppercase tracking-[0.1em] text-[#881318] font-bold">
+                ỦY BAN NHÂN DÂN PHƯỜNG THANH NHÀN • TRUNG TÂM PHỤC VỤ HÀNH CHÍNH CÔNG
               </p>
-              <p className="text-lg sm:text-xl font-bold text-white tracking-tight font-official-serif mt-0.5">
-                HỆ THỐNG THÔNG TIN QUẢN LÝ HÀNH CHÍNH &amp; MỘT CỬA ĐIỆN TỬ
+              <p className="text-lg sm:text-xl font-bold text-[#ce1126] tracking-tight font-official-serif mt-0.5">
+                CỔNG DỊCH VỤ CÔNG &amp; MỘT CỬA ĐIỆN TỬ PHƯỜNG THANH NHÀN
               </p>
             </div>
           </Link>
@@ -107,7 +107,7 @@ export function PublicHeader() {
             onClick={() => setMobileNavOpen((prev) => !prev)}
             aria-expanded={mobileNavOpen}
             aria-label="Mở trình đơn cổng dịch vụ công"
-            className="md:hidden p-2 bg-[#7f1d1d] border border-[#fca5a5]/40 rounded-[2px] text-white shrink-0 cursor-pointer"
+            className="md:hidden p-2 bg-[#ce1126] border border-[#991b1b] rounded-[2px] text-white shrink-0 cursor-pointer"
           >
             {mobileNavOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -119,7 +119,7 @@ export function PublicHeader() {
               {isStaff ? (
                 <Link
                   href="/he-thong"
-                  className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold bg-[#f59e0b] text-[#111827] hover:bg-[#fbbf24] rounded-[2px] transition-colors"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold bg-[#ce1126] text-white hover:bg-[#a60e1f] rounded-[2px] transition-colors"
                 >
                   <LayoutDashboard className="w-3.5 h-3.5" />
                   Bàn làm việc Cán bộ ({user.fullName})
@@ -127,7 +127,7 @@ export function PublicHeader() {
               ) : (
                 <Link
                   href="/ho-so-cua-toi"
-                  className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold bg-[#f59e0b] text-[#111827] hover:bg-[#fbbf24] rounded-[2px] transition-colors"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold bg-[#ce1126] text-white hover:bg-[#a60e1f] rounded-[2px] transition-colors"
                 >
                   <UserCheck className="w-3.5 h-3.5" />
                   Hồ sơ của {user.fullName}
@@ -136,7 +136,7 @@ export function PublicHeader() {
               <button
                 type="button"
                 onClick={handleLogout}
-                className="inline-flex items-center gap-1 px-3 py-2 text-xs font-medium bg-[#7f1d1d] hover:bg-[#651515] border border-[#fca5a5]/40 text-white rounded-[2px] cursor-pointer"
+                className="inline-flex items-center gap-1 px-3 py-2 text-xs font-semibold bg-white hover:bg-[#fef2f2] border border-[#ce1126] text-[#991b1b] rounded-[2px] cursor-pointer"
               >
                 <LogOut className="w-3.5 h-3.5" />
                 Đăng xuất
@@ -145,7 +145,7 @@ export function PublicHeader() {
           ) : (
             <Link
               href="/dang-nhap"
-              className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-bold uppercase tracking-wide bg-[#f59e0b] text-[#111827] hover:bg-[#fbbf24] rounded-[2px] transition-colors"
+              className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-bold uppercase tracking-wide bg-white hover:bg-[#fef2f2] text-[#ce1126] border border-[#ce1126] rounded-[2px] transition-colors"
             >
               Đăng nhập Cán bộ / Công dân
             </Link>
@@ -153,38 +153,40 @@ export function PublicHeader() {
         </div>
       </div>
 
-      {/* Thanh điều hướng chính */}
-      <nav
-        className="bg-[#1e3a5f] border-t border-[#d97706]/60 relative z-10"
-        aria-label="Điều hướng cổng hành chính"
-      >
-        <div
-          className={`max-w-7xl mx-auto px-4 sm:px-6 ${
-            mobileNavOpen ? "flex flex-col py-1.5 md:flex-row md:py-0" : "hidden md:flex"
-          } md:items-center md:overflow-x-auto`}
+      {/* Thanh điều hướng Đỏ cờ đặc trưng (như mẫu Cổng Dịch vụ công) */}
+      <div className="relative z-10 border-t border-[#dc2626]/40">
+        <nav
+          className="max-w-7xl mx-auto bg-[#d71920] text-white md:rounded-t-[2px]"
+          aria-label="Điều hướng cổng hành chính"
         >
-          {navItems.map((item) => {
-            const active =
-              pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
-            const Icon = item.icon;
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                aria-current={active ? "page" : undefined}
-                className={`inline-flex items-center gap-1.5 px-4 py-2.5 text-sm font-medium whitespace-nowrap border-b-2 transition-colors ${
-                  active
-                    ? "bg-[#152c4a] text-[#fde68a] border-[#f59e0b]"
-                    : "text-white/90 border-transparent hover:bg-[#152c4a]/70 hover:text-white"
-                }`}
-              >
-                {Icon && <Icon className="w-4 h-4 text-[#fbbf24]" />}
-                {item.label}
-              </Link>
-            );
-          })}
-        </div>
-      </nav>
+          <div
+            className={`px-2 sm:px-4 ${
+              mobileNavOpen ? "flex flex-col py-1.5 md:flex-row md:py-0" : "hidden md:flex"
+            } md:items-center md:overflow-x-auto`}
+          >
+            {navItems.map((item) => {
+              const active =
+                pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
+              const Icon = item.icon;
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  aria-current={active ? "page" : undefined}
+                  className={`inline-flex items-center gap-1.5 px-4 py-2.5 text-sm font-semibold whitespace-nowrap border-b-2 transition-colors ${
+                    active
+                      ? "bg-[#9e0e14] text-[#fef08a] border-[#facc15]"
+                      : "text-white border-transparent hover:bg-[#b51218]"
+                  }`}
+                >
+                  {Icon && <Icon className="w-4 h-4 text-[#fde047]" />}
+                  {item.label}
+                </Link>
+              );
+            })}
+          </div>
+        </nav>
+      </div>
     </header>
   );
 }

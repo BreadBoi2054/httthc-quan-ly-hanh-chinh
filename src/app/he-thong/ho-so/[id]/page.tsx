@@ -299,7 +299,7 @@ export default function StaffDossierDetailPage() {
       <div className="space-y-4">
         <Link
           href="/he-thong/ho-so"
-          className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#1e3a5f] hover:underline"
+          className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#991b1b] hover:underline"
         >
           <ArrowLeft className="w-4 h-4" />
           Quay lại Sổ theo dõi Hồ sơ Một cửa
@@ -328,7 +328,7 @@ export default function StaffDossierDetailPage() {
         <div className="space-y-1">
           <Link
             href="/he-thong/ho-so"
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#1e3a5f] hover:underline"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#991b1b] hover:underline"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             Quay lại Danh sách Hồ sơ Một cửa
@@ -360,7 +360,7 @@ export default function StaffDossierDetailPage() {
           <button
             type="button"
             onClick={() => setPrintFormType("MAU_01")}
-            className="inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-semibold border border-[#1e3a5f] text-[#1e3a5f] bg-[#f8fafc] hover:bg-[#e2e8f0] rounded-[2px] cursor-pointer"
+            className="inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-semibold border border-[#ce1126] text-[#991b1b] bg-[#f8fafc] hover:bg-[#e2e8f0] rounded-[2px] cursor-pointer"
           >
             <Printer className="w-3.5 h-3.5" />
             Mẫu 01 (Tiếp nhận)
@@ -450,8 +450,8 @@ export default function StaffDossierDetailPage() {
         <div className="xl:col-span-7 space-y-5">
           {/* Khối 1: Thông tin Thủ tục & Chủ hồ sơ */}
           <section className="border border-[#d6d3cd] rounded-[2px] overflow-hidden">
-            <div className="bg-[#f4f1ea] px-4 py-2.5 border-b border-[#d6d3cd] flex items-center justify-between">
-              <h2 className="text-xs font-bold uppercase tracking-wider text-[#1e3a5f]">
+            <div className="bg-[#fff8dc] px-4 py-2.5 border-b border-[#d6d3cd] flex items-center justify-between">
+              <h2 className="text-xs font-bold uppercase tracking-wider text-[#991b1b]">
                 1. Thông tin Chủ hồ sơ & Yêu cầu giải quyết TTHC
               </h2>
               <span className="text-[11px] font-semibold text-[#991b1b]">
@@ -498,7 +498,7 @@ export default function StaffDossierDetailPage() {
                 </div>
                 {dossier.representativeName && (
                   <div className="sm:col-span-2 p-2.5 bg-[#f8fafc] border border-[#cbd5e1] rounded-[2px]">
-                    <span className="font-bold text-[#1e3a5f]">Người được ủy quyền nộp thay: </span>
+                    <span className="font-bold text-[#991b1b]">Người được ủy quyền nộp thay: </span>
                     <strong>{dossier.representativeName}</strong> (CCCD:{" "}
                     <span className="tabular-nums">{dossier.representativeCitizenId}</span>) —{" "}
                     <span>{dossier.authorizationNote}</span>
@@ -528,7 +528,7 @@ export default function StaffDossierDetailPage() {
                 </div>
                 <div className="p-2 bg-[#f9fafb] border border-[#e5e7eb]">
                   <span className="text-[#6b7280] block">Hạn trả kết quả (SLA):</span>
-                  <strong className={dossier.sla.isOverdue ? "text-[#b91c1c]" : "text-[#1e3a5f]"}>
+                  <strong className={dossier.sla.isOverdue ? "text-[#b91c1c]" : "text-[#991b1b]"}>
                     {dossier.dueAt
                       ? new Date(dossier.dueAt).toLocaleString("vi-VN")
                       : `${dossier.procedure.processingDays} ngày làm việc`}
@@ -562,8 +562,8 @@ export default function StaffDossierDetailPage() {
 
           {/* Khối 2: Danh mục Thành phần hồ sơ & Kiểm tra pháp lý */}
           <section className="border border-[#d6d3cd] rounded-[2px] overflow-hidden">
-            <div className="bg-[#f4f1ea] px-4 py-2.5 border-b border-[#d6d3cd] flex flex-wrap items-center justify-between gap-2">
-              <h2 className="text-xs font-bold uppercase tracking-wider text-[#1e3a5f] flex items-center gap-1.5">
+            <div className="bg-[#fff8dc] px-4 py-2.5 border-b border-[#d6d3cd] flex flex-wrap items-center justify-between gap-2">
+              <h2 className="text-xs font-bold uppercase tracking-wider text-[#991b1b] flex items-center gap-1.5">
                 <FileCheck2 className="w-4 h-4 text-[#991b1b]" />
                 2. Kiểm soát Tính pháp lý Thành phần Hồ sơ ({dossier.attachments.length} tài liệu)
               </h2>
@@ -571,7 +571,7 @@ export default function StaffDossierDetailPage() {
                 <button
                   type="button"
                   onClick={verifyAllAttachments}
-                  className="px-2.5 py-1 text-[11px] font-semibold bg-[#1e3a5f] text-white hover:bg-[#172c48] rounded-[2px] cursor-pointer"
+                  className="px-2.5 py-1 text-[11px] font-semibold bg-[#ce1126] text-white hover:bg-[#991b1b] rounded-[2px] cursor-pointer"
                 >
                   Tích đối chiếu hợp lệ toàn bộ
                 </button>
@@ -607,14 +607,14 @@ export default function StaffDossierDetailPage() {
                           <p className="font-semibold text-[#111827] flex flex-wrap items-center gap-1.5">
                             <span>{att.docName}</span>
                             {att.reusedFromVault && (
-                              <span className="inline-block px-1.5 py-0.5 text-[10px] font-bold bg-[#eff6ff] text-[#1e3a5f] border border-[#93c5fd] rounded-[2px]">
+                              <span className="inline-block px-1.5 py-0.5 text-[10px] font-bold bg-[#fffbeb] text-[#991b1b] border border-[#f59e0b] rounded-[2px]">
                                 Tái sử dụng Kho số hóa
                               </span>
                             )}
                           </p>
                           <p className="text-[11px] text-[#6b7280]">
                             Mã: {att.docCode} • Tệp số hóa:{" "}
-                            <span className="font-mono text-[#1e3a5f]">
+                            <span className="font-mono text-[#991b1b]">
                               {att.fileName || "Bản giấy đối chiếu trực tiếp"}
                             </span>
                           </p>
@@ -661,8 +661,8 @@ export default function StaffDossierDetailPage() {
             dossier.apologyReason ||
             dossier.satisfactionRating) && (
             <section className="border border-[#d6d3cd] rounded-[2px] overflow-hidden">
-              <div className="bg-[#f4f1ea] px-4 py-2.5 border-b border-[#d6d3cd]">
-                <h2 className="text-xs font-bold uppercase tracking-wider text-[#1e3a5f]">
+              <div className="bg-[#fff8dc] px-4 py-2.5 border-b border-[#d6d3cd]">
+                <h2 className="text-xs font-bold uppercase tracking-wider text-[#991b1b]">
                   3. Kết luận Thẩm định, Bút phê Phê duyệt & Văn bản Kết quả
                 </h2>
               </div>
@@ -690,7 +690,7 @@ export default function StaffDossierDetailPage() {
                 )}
                 {dossier.appraisalNote && (
                   <div className="p-3 bg-[#f8fafc] border border-[#cbd5e1]">
-                    <p className="font-bold text-[#1e3a5f]">
+                    <p className="font-bold text-[#991b1b]">
                       Báo cáo thẩm định chuyên môn ({dossier.assignee?.fullName}):
                     </p>
                     <p className="mt-1 text-[#111827]">{dossier.appraisalNote}</p>
@@ -749,9 +749,9 @@ export default function StaffDossierDetailPage() {
 
           {/* Khối 4: Phiếu kiểm soát quá trình giải quyết hồ sơ (Mẫu 05) */}
           <section className="border border-[#d6d3cd] rounded-[2px] overflow-hidden">
-            <div className="bg-[#f4f1ea] px-4 py-2.5 border-b border-[#d6d3cd] flex items-center gap-1.5">
-              <Clock className="w-4 h-4 text-[#1e3a5f]" />
-              <h2 className="text-xs font-bold uppercase tracking-wider text-[#1e3a5f]">
+            <div className="bg-[#fff8dc] px-4 py-2.5 border-b border-[#d6d3cd] flex items-center gap-1.5">
+              <Clock className="w-4 h-4 text-[#991b1b]" />
+              <h2 className="text-xs font-bold uppercase tracking-wider text-[#991b1b]">
                 4. Phiếu Kiểm soát Quá trình Giải quyết Hồ sơ (Mẫu số 05 - Bất biến)
               </h2>
             </div>
@@ -771,7 +771,7 @@ export default function StaffDossierDetailPage() {
                     </span>
                   </div>
                   <div className="flex flex-wrap items-center gap-2 mt-1">
-                    <span className="font-semibold text-[#1e3a5f]">{h.actorName}</span>
+                    <span className="font-semibold text-[#991b1b]">{h.actorName}</span>
                     <RoleBadge role={h.actorRole} />
                     <DossierStatusBadge status={h.toStatus} />
                   </div>
@@ -784,8 +784,8 @@ export default function StaffDossierDetailPage() {
 
         {/* Cột Phải (5/12): Bàn tác nghiệp Xử lý Quy trình Một cửa */}
         <div className="xl:col-span-5">
-          <div className="border-2 border-[#1e3a5f] bg-[#fafaf9] rounded-[2px] sticky top-4">
-            <div className="bg-[#1e3a5f] text-white px-4 py-3 flex items-center gap-2">
+          <div className="border-2 border-[#ce1126] bg-[#fafaf9] rounded-[2px] sticky top-4">
+            <div className="bg-[#ce1126] text-white px-4 py-3 flex items-center gap-2">
               <UserCheck className="w-4 h-4 text-[#fbbf24]" />
               <div>
                 <h2 className="text-sm font-bold uppercase tracking-wide">
@@ -824,7 +824,7 @@ export default function StaffDossierDetailPage() {
                           className={`flex items-start gap-2.5 p-2.5 border rounded-[2px] cursor-pointer transition-colors ${
                             selectedAction === act.code
                               ? "border-[#991b1b] bg-[#fef2f2]"
-                              : "border-[#d6d3cd] bg-white hover:bg-[#f4f1ea]"
+                              : "border-[#d6d3cd] bg-white hover:bg-[#fff8dc]"
                           }`}
                         >
                           <input
@@ -847,7 +847,7 @@ export default function StaffDossierDetailPage() {
                   {/* Trường động theo từng bước nghiệp vụ */}
                   {(selectedAction === "TIEP_NHAN" || selectedAction === "CHUYEN_CHUYEN_VIEN") && (
                     <div className="space-y-2 p-3 bg-white border border-[#d6d3cd]">
-                      <label className="block font-bold text-[#1e3a5f]">
+                      <label className="block font-bold text-[#991b1b]">
                         {selectedAction === "CHUYEN_CHUYEN_VIEN"
                           ? `Chọn Chuyên viên nhận điều chuyển (${dossier.department.name}) *:`
                           : `Phân công Chuyên viên thụ lý (${dossier.department.name}):`}
@@ -892,7 +892,7 @@ export default function StaffDossierDetailPage() {
 
                   {selectedAction === "BO_SUNG_HO_SO" && (
                     <div className="space-y-2 p-3 bg-white border border-[#d6d3cd]">
-                      <label className="block font-bold text-[#1e3a5f]">
+                      <label className="block font-bold text-[#991b1b]">
                         Tên tệp / giấy tờ công dân giao nộp bổ sung:
                       </label>
                       <input
@@ -945,7 +945,7 @@ export default function StaffDossierDetailPage() {
                           Còn {mandatoryUnverified} thành phần hồ sơ bắt buộc chưa tích đối chiếu ở Bảng 2 bên trái! Vui lòng tích đối chiếu trước khi trình ký.
                         </div>
                       )}
-                      <label className="block font-bold text-[#1e3a5f]">
+                      <label className="block font-bold text-[#991b1b]">
                         Ý kiến thẩm định chuyên môn & Đề xuất trình Lãnh đạo *:
                       </label>
                       <textarea

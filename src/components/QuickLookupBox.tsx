@@ -24,9 +24,9 @@ export function QuickLookupBox() {
   ];
 
   return (
-    <div className="bg-white border-2 border-[#991b1b] p-5 sm:p-6 rounded-[2px]">
+    <div className="bg-white border-2 border-[#ce1126] p-5 sm:p-6 rounded-[2px]">
       <div className="border-b border-[#e5e7eb] pb-3 mb-4">
-        <h2 className="text-base sm:text-lg font-bold text-[#991b1b] uppercase tracking-tight font-official-serif">
+        <h2 className="text-base sm:text-lg font-bold text-[#ce1126] uppercase tracking-tight font-official-serif">
           Tra cứu trực tuyến Tiến độ Hồ sơ Một cửa
         </h2>
         <p className="text-xs text-[#4b5563] mt-0.5">
@@ -37,7 +37,7 @@ export function QuickLookupBox() {
       <form onSubmit={handleSubmit} className="grid grid-cols-1 sm:grid-cols-12 gap-3">
         <div className="sm:col-span-6">
           <label htmlFor="quick-code" className="block text-xs font-semibold text-[#111827] mb-1">
-            Mã số biên nhận hồ sơ <span className="text-[#b91c1c]">*</span>
+            Mã số biên nhận hồ sơ <span className="text-[#ce1126]">*</span>
           </label>
           <input
             id="quick-code"
@@ -46,7 +46,7 @@ export function QuickLookupBox() {
             value={code}
             onChange={(e) => setCode(e.target.value)}
             placeholder="Ví dụ: HS-20261111-0001"
-            className="w-full px-3 py-2 text-sm border border-[#9ca3af] rounded-[2px] bg-white focus:outline-none focus:border-[#991b1b] tabular-nums"
+            className="w-full px-3 py-2 text-sm border border-[#9ca3af] rounded-[2px] bg-white focus:outline-none focus:border-[#ce1126] tabular-nums"
           />
         </div>
 
@@ -61,14 +61,14 @@ export function QuickLookupBox() {
             value={pin}
             onChange={(e) => setPin(e.target.value)}
             placeholder="6 chữ số"
-            className="w-full px-3 py-2 text-sm border border-[#9ca3af] rounded-[2px] bg-white focus:outline-none focus:border-[#991b1b] tabular-nums"
+            className="w-full px-3 py-2 text-sm border border-[#9ca3af] rounded-[2px] bg-white focus:outline-none focus:border-[#ce1126] tabular-nums"
           />
         </div>
 
         <div className="sm:col-span-3 flex items-end">
           <button
             type="submit"
-            className="w-full inline-flex items-center justify-center gap-1.5 px-4 py-2 text-sm font-bold bg-[#991b1b] hover:bg-[#7f1d1d] text-white rounded-[2px] cursor-pointer transition-colors"
+            className="w-full inline-flex items-center justify-center gap-1.5 px-4 py-2 text-sm font-bold bg-[#d71920] hover:bg-[#a60e1f] text-white rounded-[2px] cursor-pointer transition-colors"
           >
             <Search className="w-4 h-4" />
             Tra cứu ngay

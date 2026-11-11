@@ -280,7 +280,7 @@ export async function POST(
               status: "DA_BAN_HANH",
               title: input.resultSummary!.trim(),
               contentSummary: `Văn bản kết quả giải quyết hồ sơ Một cửa mã ${dossier.dossierCode} cho ông/bà ${dossier.applicantName}.`,
-              issuingAgency: "UBND Phường Tân Bình",
+              issuingAgency: "UBND Phường Thanh Nhàn",
               recipientAgency: dossier.applicantName,
               signerName: session.fullName,
               signerTitle: session.positionTitle || "Lãnh đạo UBND",

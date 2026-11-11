@@ -1,6 +1,6 @@
-# Hệ thống Thông tin Quản lý Hành chính & Một cửa Điện tử (HTTTHC v2.0)
+# Hệ thống Thông tin Quản lý Hành chính & Một cửa Điện tử — UBND Phường Thanh Nhàn (HTTTHC v2.1)
 
-> Nền tảng Cổng Dịch vụ công trực tuyến kết hợp Bàn làm việc Một cửa liên thông, Điều hành Văn bản và Giám sát Bộ chỉ số phục vụ người dân, doanh nghiệp (Quyết định 766/QĐ-TTg).
+> Nền tảng Cổng Dịch vụ công trực tuyến kết hợp Bàn làm việc Một cửa liên thông, Điều hành Văn bản và Giám sát Bộ chỉ số phục vụ người dân, doanh nghiệp (Quyết định 766/QĐ-TTg) — triển khai cho **UBND Phường Thanh Nhàn, Thành phố Hà Nội**.
 
 ---
 

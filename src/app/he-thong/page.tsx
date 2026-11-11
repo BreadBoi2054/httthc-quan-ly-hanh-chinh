@@ -150,7 +150,7 @@ export default async function StaffOverviewPage() {
           </Link>
           <Link
             href="/he-thong/van-ban"
-            className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold border border-[#1e3a5f] text-[#1e3a5f] hover:bg-[#f0f4f8] rounded-[2px]"
+            className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold border border-[#ce1126] text-[#991b1b] hover:bg-[#fef2f2] rounded-[2px]"
           >
             Sổ Văn bản đến / đi
           </Link>
@@ -158,7 +158,7 @@ export default async function StaffOverviewPage() {
       </div>
 
       {/* Dải 4 chỉ số điều hành phân cách bằng đường kẻ mảnh 1px (KPI Strip chuẩn App Screen) */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border border-[#d6d3cd] divide-y sm:divide-y-0 sm:divide-x divide-[#d6d3cd] bg-[#faf8f5] rounded-[2px] tabular-nums">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border border-[#d6d3cd] divide-y sm:divide-y-0 sm:divide-x divide-[#d6d3cd] bg-[#fffdf5] rounded-[2px] tabular-nums">
         <div className="p-4">
           <p className="text-xs text-[#4b5563]">Tổng hồ sơ đang giải quyết</p>
           <p className="text-3xl font-bold text-[#111827] mt-1">{activeDossiers.length}</p>
@@ -188,7 +188,7 @@ export default async function StaffOverviewPage() {
 
         <div className="p-4">
           <p className="text-xs text-[#4b5563]">Văn bản Điều hành &amp; Danh mục</p>
-          <p className="text-2xl font-bold text-[#1e3a5f] mt-1">
+          <p className="text-2xl font-bold text-[#991b1b] mt-1">
             {documents.length} <span className="text-xs font-normal text-[#4b5563]">văn bản</span>
           </p>
           <p className="text-xs text-[#4b5563] mt-1">
@@ -201,7 +201,7 @@ export default async function StaffOverviewPage() {
       <div className="grid grid-cols-1 xl:grid-cols-12 gap-6 items-start">
         {/* Khối 1: Hồ sơ ưu tiên tác nghiệp ngay */}
         <div className="xl:col-span-8 border border-[#d6d3cd] rounded-[2px]">
-          <div className="px-4 py-3 bg-[#faf8f5] border-b border-[#d6d3cd] flex items-center justify-between">
+          <div className="px-4 py-3 bg-[#fffdf5] border-b border-[#d6d3cd] flex items-center justify-between">
             <div>
               <h2 className="text-sm font-bold uppercase text-[#111827]">
                 Hàng đợi Hồ sơ Cần Xử lý theo Phân quyền ({priorityQueue.length})
@@ -238,7 +238,7 @@ export default async function StaffOverviewPage() {
                   </tr>
                 ) : (
                   priorityQueue.map((d) => (
-                    <tr key={d.id} className="hover:bg-[#faf8f5]">
+                    <tr key={d.id} className="hover:bg-[#fffdf5]">
                       <td className="px-3.5 py-3 align-top tabular-nums">
                         <Link
                           href={`/he-thong/ho-so/${d.id}`}
@@ -269,7 +269,7 @@ export default async function StaffOverviewPage() {
                       <td className="px-3.5 py-3 align-top text-right">
                         <Link
                           href={`/he-thong/ho-so/${d.id}`}
-                          className="inline-flex items-center px-2.5 py-1.5 text-xs font-bold bg-[#1e3a5f] hover:bg-[#152c4a] text-white rounded-[2px]"
+                          className="inline-flex items-center px-2.5 py-1.5 text-xs font-bold bg-[#ce1126] hover:bg-[#991b1b] text-white rounded-[2px]"
                         >
                           Xử lý
                         </Link>
@@ -316,7 +316,7 @@ export default async function StaffOverviewPage() {
                       {activePct > 0 && (
                         <div
                           style={{ width: `${activePct}%` }}
-                          className="bg-[#1e3a5f]"
+                          className="bg-[#ce1126]"
                           title={`Đang thụ lý đúng hạn: ${row.inProgress - row.overdue}`}
                         />
                       )}
@@ -338,7 +338,7 @@ export default async function StaffOverviewPage() {
                 <span className="w-2.5 h-2.5 bg-[#15803d] inline-block" /> Đã hoàn thành
               </span>
               <span className="inline-flex items-center gap-1">
-                <span className="w-2.5 h-2.5 bg-[#1e3a5f] inline-block" /> Đang xử lý
+                <span className="w-2.5 h-2.5 bg-[#ce1126] inline-block" /> Đang xử lý
               </span>
               <span className="inline-flex items-center gap-1">
                 <span className="w-2.5 h-2.5 bg-[#b91c1c] inline-block" /> Quá hạn SLA
@@ -359,7 +359,7 @@ export default async function StaffOverviewPage() {
               {documents.slice(0, 3).map((doc) => (
                 <div key={doc.id} className="py-2.5 first:pt-0 last:pb-0 space-y-1">
                   <div className="flex items-center justify-between gap-2">
-                    <span className="font-bold text-[#1e3a5f] tabular-nums">
+                    <span className="font-bold text-[#991b1b] tabular-nums">
                       [{doc.direction === "DEN" ? "VB ĐẾN" : "VB ĐI"}] {doc.documentSymbol}
                     </span>
                     {doc.urgency !== "THUONG" && (

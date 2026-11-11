@@ -198,7 +198,7 @@ function TrackDossierContent() {
 
       {d && (
         <div className="bg-white border border-[#d6d3cd] rounded-[2px] overflow-hidden">
-          <div className="bg-[#faf8f5] px-5 py-4 border-b border-[#d6d3cd] flex flex-wrap items-center justify-between gap-3">
+          <div className="bg-[#fffdf5] px-5 py-4 border-b border-[#d6d3cd] flex flex-wrap items-center justify-between gap-3">
             <div>
               <div className="flex items-center gap-2.5 flex-wrap">
                 <span className="text-base font-bold text-[#991b1b] tabular-nums">{d.dossierCode}</span>
@@ -267,13 +267,13 @@ function TrackDossierContent() {
 
           {/* Nếu đã xác thực PIN: Cho phép in các biểu mẫu hành chính A4 phát sinh */}
           {result.pinVerified && (
-            <div className="px-5 py-4 bg-[#faf8f5] border-b border-[#e5e7eb] flex flex-wrap items-center gap-2.5">
-              <span className="text-xs font-bold uppercase text-[#1e3a5f]">Biểu mẫu hành chính điện tử:</span>
+            <div className="px-5 py-4 bg-[#fffdf5] border-b border-[#e5e7eb] flex flex-wrap items-center gap-2.5">
+              <span className="text-xs font-bold uppercase text-[#991b1b]">Biểu mẫu hành chính điện tử:</span>
               {d.acceptedAt && (
                 <button
                   type="button"
                   onClick={() => setPrintForm("MAU_01")}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold bg-white border border-[#1e3a5f] text-[#1e3a5f] hover:bg-[#e0f2fe] rounded-[2px] cursor-pointer"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold bg-white border border-[#ce1126] text-[#991b1b] hover:bg-[#fef2f2] rounded-[2px] cursor-pointer"
                 >
                   <Printer className="w-3.5 h-3.5" />
                   Mẫu 01: Giấy tiếp nhận &amp; hẹn trả
@@ -471,8 +471,8 @@ function TrackDossierContent() {
 
           {/* Đánh giá sự hài lòng SIPAS khi hồ sơ đã HOAN_THANH và đã nhập đúng PIN */}
           {result.pinVerified && d.status === "HOAN_THANH" && (
-            <div className="p-5 bg-[#faf8f5] border-t border-[#d6d3cd]">
-              <h3 className="text-sm font-bold text-[#1e3a5f] flex items-center gap-1.5">
+            <div className="p-5 bg-[#fffdf5] border-t border-[#d6d3cd]">
+              <h3 className="text-sm font-bold text-[#991b1b] flex items-center gap-1.5">
                 <Star className="w-4 h-4 text-[#d97706]" />
                 Khảo sát Mức độ Hài lòng của Người dân (Chỉ số SIPAS)
               </h3>

@@ -1,5 +1,5 @@
 # SỔ TAY NGHIỆP VỤ & HƯỚNG DẪN SỬ DỤNG HỆ THỐNG (USER GUIDE)
-## Hệ thống Thông tin Quản lý Hành chính & Một cửa Điện tử — UBND Phường Tân Bình (`httthc.noibo.vn`)
+## Hệ thống Thông tin Quản lý Hành chính & Một cửa Điện tử — UBND Phường Thanh Nhàn (`httthc.noibo.vn`)
 
 > **Phiên bản tài liệu**: v2.0 (Đồng bộ sau 7 vòng kiểm định & chuẩn hóa chuyên sâu: 4 vòng tổng quan + 3 vòng chuyên sâu nghiệp vụ & UX) — Áp dụng cho Công chức Bộ phận Một cửa, Chuyên viên Phòng/Ban chuyên môn, Lãnh đạo UBND, Quản trị viên Văn thư và Công dân/Tổ chức.
 > **Căn cứ nghiệp vụ mô phỏng**: Nghị định số 61/2018/NĐ-CP, Nghị định số 107/2021/NĐ-CP (Cơ chế Một cửa, một cửa liên thông), Nghị định số 45/2020/NĐ-CP (Thực hiện TTHC trên môi trường điện tử & Kho dữ liệu điện tử), Nghị định số 30/2020/NĐ-CP (Công tác văn thư & bảo mật văn bản), Thông tư số 01/2018/TT-VPCP, Quyết định số 766/QĐ-TTg (Bộ 05 chỉ số phục vụ người dân, doanh nghiệp).

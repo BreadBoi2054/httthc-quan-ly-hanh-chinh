@@ -5,6 +5,7 @@ import { evaluateDossierSla } from "@/lib/sla-engine";
 import { PublicHeader } from "@/components/PublicHeader";
 import { PublicFooter } from "@/components/PublicFooter";
 import { QuickLookupBox } from "@/components/QuickLookupBox";
+import { LotusGardenStrip } from "@/components/AdminEmblem";
 import { FilePlus2, CheckCircle2, Clock, ShieldCheck, ArrowRight, BookOpen, Building2 } from "lucide-react";
 
 export const dynamic = "force-dynamic";
@@ -105,41 +106,41 @@ export default async function HomePage() {
     <div className="min-h-screen flex flex-col">
       <PublicHeader />
 
-      <main className="flex-1">
-        {/* Khung thông điệp hành chính & Tra cứu hồ sơ trực tiếp */}
-        <section className="bg-[#f2ede2] border-b border-[#d6d3cd] py-8">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+      <main className="flex-1 bg-white">
+        {/* Khung thông điệp hành chính & Tra cứu hồ sơ trên nền Vàng kem + Hoa sen */}
+        <section className="bg-[#fff1bd] border-b border-[#e5c56b] pt-7 relative overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 pb-6 grid grid-cols-1 lg:grid-cols-12 gap-6 items-start relative z-10">
             <div className="lg:col-span-7 space-y-5">
-              <div className="bg-white border border-[#d6d3cd] border-l-4 border-l-[#991b1b] p-5 rounded-[2px]">
-                <p className="text-xs font-bold uppercase tracking-wider text-[#991b1b]">
-                  CƠ CHẾ MỘT CỬA, MỘT CỬA LIÊN THÔNG ĐIỆN TỬ
+              <div className="bg-[#fffbeb]/90 border border-[#e5c56b] border-l-4 border-l-[#ce1126] p-5 rounded-[2px]">
+                <p className="text-xs font-bold uppercase tracking-wider text-[#ce1126]">
+                  CƠ CHẾ MỘT CỬA, MỘT CỬA LIÊN THÔNG ĐIỆN TỬ • PHƯỜNG THANH NHÀN
                 </p>
-                <h1 className="text-xl sm:text-2xl font-bold text-[#111827] font-official-serif mt-1">
+                <h1 className="text-xl sm:text-2xl font-bold text-[#991b1b] font-official-serif mt-1">
                   Công khai quy trình • Đúng hạn pháp luật • Lấy sự hài lòng làm thước đo
                 </h1>
-                <p className="text-sm text-[#374151] mt-2 leading-relaxed">
+                <p className="text-sm text-[#4a2518] mt-2 leading-relaxed">
                   Hệ thống tiếp nhận, luân chuyển thẩm định, ký duyệt kết quả và giám sát thời hạn giải quyết Thủ tục hành chính theo thời gian thực (tự động loại trừ ngày nghỉ cuối tuần, lễ tết và ghi nhận tạm dừng/gia hạn minh bạch).
                 </p>
                 <div className="mt-4 flex flex-wrap gap-3">
                   <Link
                     href="/nop-ho-so"
-                    className="inline-flex items-center gap-2 px-4 py-2.5 text-sm font-bold bg-[#991b1b] hover:bg-[#7f1d1d] text-white rounded-[2px] transition-colors"
+                    className="inline-flex items-center gap-2 px-4 py-2.5 text-sm font-bold bg-[#d71920] hover:bg-[#a60e1f] text-white rounded-[2px] transition-colors"
                   >
                     <FilePlus2 className="w-4 h-4" />
                     Nộp hồ sơ trực tuyến
                   </Link>
                   <Link
                     href="/thu-tuc"
-                    className="inline-flex items-center gap-2 px-4 py-2.5 text-sm font-semibold bg-white hover:bg-[#f9fafb] text-[#1e3a5f] border border-[#1e3a5f] rounded-[2px] transition-colors"
+                    className="inline-flex items-center gap-2 px-4 py-2.5 text-sm font-semibold bg-white hover:bg-[#fef2f2] text-[#b91c1c] border border-[#ce1126] rounded-[2px] transition-colors"
                   >
                     Xem {procedures.length} Thủ tục hành chính
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
                     href="/so-tay-nghiep-vu"
-                    className="inline-flex items-center gap-2 px-4 py-2.5 text-sm font-semibold bg-[#fef3c7] hover:bg-[#fde68a] text-[#78350f] border border-[#d97706] rounded-[2px] transition-colors"
+                    className="inline-flex items-center gap-2 px-4 py-2.5 text-sm font-semibold bg-white hover:bg-[#fffbeb] text-[#78350f] border border-[#d97706] rounded-[2px] transition-colors"
                   >
-                    <BookOpen className="w-4 h-4" />
+                    <BookOpen className="w-4 h-4 text-[#d97706]" />
                     Sổ tay nghiệp vụ
                   </Link>
                 </div>
@@ -149,21 +150,21 @@ export default async function HomePage() {
             </div>
 
             {/* Bảng công khai 5 Nhóm Chỉ số Quyết định 766/QĐ-TTg thời gian thực */}
-            <div className="lg:col-span-5 bg-white border border-[#d6d3cd] rounded-[2px] overflow-hidden">
-              <div className="bg-[#1e3a5f] text-white px-5 py-3.5 border-b-2 border-[#d97706] flex items-center justify-between gap-3">
+            <div className="lg:col-span-5 bg-white border border-[#e5c56b] rounded-[2px] overflow-hidden">
+              <div className="bg-[#ce1126] text-white px-5 py-3.5 border-b-2 border-[#f59e0b] flex items-center justify-between gap-3">
                 <div>
-                  <p className="text-[11px] uppercase tracking-wider text-[#fde68a] font-semibold">
+                  <p className="text-[11px] uppercase tracking-wider text-[#fef08a] font-semibold">
                     BỘ CHỈ SỐ PHỤC VỤ NGƯỜI DÂN (QUYẾT ĐỊNH 766/QĐ-TTG)
                   </p>
                   <h2 className="text-sm font-bold mt-0.5">
                     Tổng điểm đối soát thời gian thực: {overall766Score}/100 điểm
                   </h2>
                 </div>
-                <ShieldCheck className="w-6 h-6 text-[#fbbf24] shrink-0" />
+                <ShieldCheck className="w-6 h-6 text-[#fde047] shrink-0" />
               </div>
 
               <div className="divide-y divide-[#e5e7eb] text-sm">
-                <div className="p-4 grid grid-cols-2 gap-4 bg-[#faf8f5]">
+                <div className="p-4 grid grid-cols-2 gap-4 bg-[#fffdf5]">
                   <div>
                     <p className="text-xs text-[#4b5563]">Tiến độ giải quyết đúng hạn</p>
                     <p className="text-2xl font-bold text-[#15803d] tabular-nums mt-0.5">{onTimeRate}%</p>
@@ -173,7 +174,7 @@ export default async function HomePage() {
                   </div>
                   <div>
                     <p className="text-xs text-[#4b5563]">Mức độ hài lòng (SIPAS)</p>
-                    <p className="text-2xl font-bold text-[#991b1b] tabular-nums mt-0.5">{satisfactionRate}%</p>
+                    <p className="text-2xl font-bold text-[#ce1126] tabular-nums mt-0.5">{satisfactionRate}%</p>
                     <p className="text-[11px] text-[#4b5563] tabular-nums">
                       {positiveRatedCount}/{ratedCount} lượt đánh giá tích cực
                     </p>
@@ -186,7 +187,7 @@ export default async function HomePage() {
                 </div>
                 <div className="px-5 py-2.5 flex items-center justify-between gap-2">
                   <span className="text-[#374151]">3. DVC trực tuyến &amp; Thanh toán số</span>
-                  <strong className="tabular-nums text-[#1e3a5f]">
+                  <strong className="tabular-nums text-[#b91c1c]">
                     {onlineAndPaymentRate}% (Nộp {onlineRate}% • Phí ĐT {onlinePaymentRate}%)
                   </strong>
                 </div>
@@ -203,13 +204,15 @@ export default async function HomePage() {
               </div>
             </div>
           </div>
+
+          <LotusGardenStrip />
         </section>
 
-        {/* Danh mục Thủ tục Hành chính tiêu biểu theo lĩnh vực */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 py-10">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b-2 border-[#991b1b] pb-3 mb-6">
+        {/* Danh mục Thủ tục Hành chính tiêu biểu theo lĩnh vực (Nền trắng tinh khiết) */}
+        <section className="bg-white max-w-7xl mx-auto px-4 sm:px-6 py-10">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b-2 border-[#ce1126] pb-3 mb-6">
             <div>
-              <h2 className="text-xl font-bold text-[#991b1b] uppercase font-official-serif">
+              <h2 className="text-xl font-bold text-[#ce1126] uppercase font-official-serif">
                 Danh mục Thủ tục Hành chính Công bố Thực hiện
               </h2>
               <p className="text-sm text-[#4b5563] mt-0.5">
@@ -218,7 +221,7 @@ export default async function HomePage() {
             </div>
             <Link
               href="/thu-tuc"
-              className="text-sm font-semibold text-[#1e3a5f] hover:text-[#991b1b] inline-flex items-center gap-1"
+              className="text-sm font-semibold text-[#b91c1c] hover:text-[#7f1d1d] inline-flex items-center gap-1"
             >
               Xem toàn bộ chi tiết quy trình <ArrowRight className="w-4 h-4" />
             </Link>
@@ -228,22 +231,22 @@ export default async function HomePage() {
             {fields.map((field) => {
               const items = procedures.filter((p) => p.field === field);
               return (
-                <div key={field} className="bg-white border border-[#d6d3cd] rounded-[2px] flex flex-col">
-                  <div className="bg-[#faf8f5] px-4 py-3 border-b border-[#d6d3cd] flex items-center justify-between">
+                <div key={field} className="bg-white border border-[#e5e7eb] rounded-[2px] flex flex-col">
+                  <div className="bg-[#fff8dc] px-4 py-3 border-b border-[#e5c56b] flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <Building2 className="w-4 h-4 text-[#991b1b]" />
-                      <h3 className="font-bold text-sm uppercase text-[#111827]">{field}</h3>
+                      <Building2 className="w-4 h-4 text-[#ce1126]" />
+                      <h3 className="font-bold text-sm uppercase text-[#881318]">{field}</h3>
                     </div>
-                    <span className="text-xs font-semibold text-[#78350f] bg-[#fef3c7] px-2 py-0.5 border border-[#f59e0b]/50 rounded-[2px] tabular-nums">
+                    <span className="text-xs font-semibold text-[#78350f] bg-white px-2 py-0.5 border border-[#d97706]/50 rounded-[2px] tabular-nums">
                       {items.length} thủ tục
                     </span>
                   </div>
                   <div className="divide-y divide-[#e5e7eb] flex-1">
                     {items.map((proc) => (
-                      <div key={proc.id} className="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                      <div key={proc.id} className="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:bg-[#fafafa] transition-colors">
                         <div className="space-y-1">
                           <div className="flex items-center gap-2 flex-wrap">
-                            <span className="text-xs font-bold text-[#1e3a5f] bg-[#e0f2fe] px-1.5 py-0.5 rounded-[2px] tabular-nums">
+                            <span className="text-xs font-bold text-[#991b1b] bg-[#fef2f2] border border-[#fecaca] px-1.5 py-0.5 rounded-[2px] tabular-nums">
                               Mã: {proc.code}
                             </span>
                             <span
@@ -258,13 +261,13 @@ export default async function HomePage() {
                           </div>
                           <Link
                             href={`/thu-tuc?q=${proc.code}`}
-                            className="font-semibold text-sm text-[#111827] hover:text-[#991b1b] block"
+                            className="font-semibold text-sm text-[#111827] hover:text-[#ce1126] block"
                           >
                             {proc.name}
                           </Link>
                           <div className="flex flex-wrap items-center gap-3 text-xs text-[#4b5563] tabular-nums">
                             <span className="inline-flex items-center gap-1">
-                              <Clock className="w-3.5 h-3.5 text-[#991b1b]" />
+                              <Clock className="w-3.5 h-3.5 text-[#ce1126]" />
                               {proc.processingDays === 0
                                 ? `Trong ngày (${proc.processingHours}h làm việc)`
                                 : `${proc.processingDays} ngày làm việc`}
@@ -283,7 +286,7 @@ export default async function HomePage() {
 
                         <Link
                           href={`/nop-ho-so?procedureId=${proc.id}`}
-                          className="shrink-0 inline-flex items-center justify-center px-3 py-1.5 text-xs font-bold bg-[#991b1b] hover:bg-[#7f1d1d] text-white rounded-[2px] transition-colors"
+                          className="shrink-0 inline-flex items-center justify-center px-3 py-1.5 text-xs font-bold bg-[#d71920] hover:bg-[#a60e1f] text-white rounded-[2px] transition-colors"
                         >
                           Nộp hồ sơ
                         </Link>
@@ -296,10 +299,10 @@ export default async function HomePage() {
           </div>
         </section>
 
-        {/* Sơ đồ 5 bước quy trình Một cửa chuẩn pháp lý */}
-        <section className="bg-white border-t border-[#d6d3cd] py-10">
+        {/* Sơ đồ 5 bước quy trình Một cửa chuẩn pháp lý (Nền xám sáng phân lớp như cổng mẫu) */}
+        <section className="bg-[#f3f4f6] border-t border-[#e5e7eb] py-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
-            <h2 className="text-lg font-bold text-[#1e3a5f] uppercase font-official-serif mb-5">
+            <h2 className="text-lg font-bold text-[#991b1b] uppercase font-official-serif mb-5">
               Quy trình Giải quyết Hồ sơ Chuẩn Cơ chế Một cửa Liên thông
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
@@ -330,9 +333,9 @@ export default async function HomePage() {
                   desc: "Kiểm soát hoàn thành nghĩa vụ lệ phí (Biên lai điện tử), trả kết quả và khảo sát SIPAS.",
                 },
               ].map((s) => (
-                <div key={s.step} className="border border-[#d6d3cd] bg-[#faf8f5] p-4 rounded-[2px]">
+                <div key={s.step} className="border border-[#e5e7eb] bg-white p-4 rounded-[2px]">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs font-bold uppercase text-[#991b1b] bg-[#fee2e2] px-2 py-0.5 rounded-[2px]">
+                    <span className="text-xs font-bold uppercase text-[#ce1126] bg-[#fef2f2] border border-[#fecaca] px-2 py-0.5 rounded-[2px]">
                       {s.step}
                     </span>
                     <CheckCircle2 className="w-4 h-4 text-[#15803d]" />
