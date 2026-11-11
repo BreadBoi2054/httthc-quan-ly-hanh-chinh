@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { PublicHeader } from "@/components/PublicHeader";
 import { PublicFooter } from "@/components/PublicFooter";
+import { CulturalSubpageBanner } from "@/components/AdminEmblem";
 import { Search, FilePlus2, ChevronDown, ChevronUp, RotateCcw } from "lucide-react";
 
 interface ProcedureItem {
@@ -71,14 +72,11 @@ function ProceduresCatalogContent() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 space-y-6">
-      <div className="border-b-2 border-[#991b1b] pb-3">
-        <h1 className="text-xl sm:text-2xl font-bold text-[#991b1b] uppercase font-official-serif">
-          Cơ sở dữ liệu Danh mục Thủ tục Hành chính Chuẩn hóa
-        </h1>
-        <p className="text-sm text-[#4b5563] mt-1">
-          Công khai đầy đủ trình tự thực hiện, thành phần hồ sơ, thời hạn giải quyết, mức phí và căn cứ pháp lý.
-        </p>
-      </div>
+      <CulturalSubpageBanner
+        eyebrow="CỔNG DỊCH VỤ CÔNG UBND PHƯỜNG THANH NHÀN"
+        title="Cơ sở dữ liệu Danh mục Thủ tục Hành chính Chuẩn hóa"
+        description="Công khai đầy đủ trình tự thực hiện, thành phần hồ sơ, thời hạn giải quyết, mức phí và căn cứ pháp lý."
+      />
 
       {/* Bộ lọc tra cứu TTHC */}
       <div className="bg-white border border-[#d6d3cd] p-4 rounded-[2px] space-y-3">

@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { PublicHeader } from "@/components/PublicHeader";
 import { PublicFooter } from "@/components/PublicFooter";
+import { CulturalSubpageBanner } from "@/components/AdminEmblem";
 import { BookOpen, ShieldCheck, Clock, FileSpreadsheet, Users, CheckSquare } from "lucide-react";
 
 export default function OperationalHandbookPage() {
@@ -9,18 +10,19 @@ export default function OperationalHandbookPage() {
     <div className="min-h-screen flex flex-col">
       <PublicHeader />
       <main className="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-8 space-y-8">
-        <div className="border-b-2 border-[#991b1b] pb-4">
-          <p className="text-xs font-bold uppercase tracking-wider text-[#991b1b]">
-            TÀI LIỆU HƯỚNG DẪN VẬN HÀNH CHUẨN HÓA (USER GUIDE v2.0)
-          </p>
-          <h1 className="text-2xl font-bold text-[#111827] font-official-serif mt-1">
-            Sổ tay Nghiệp vụ Quản lý Hành chính &amp; Cơ chế Một cửa Liên thông
-          </h1>
-          <p className="text-sm text-[#4b5563] mt-1">
-            Hướng dẫn chi tiết quy trình tác nghiệp dành cho Công dân/Tổ chức và 04 nhóm Cán bộ, Công chức nội bộ sau 7 vòng kiểm định chuyên sâu (kèm tệp{" "}
-            <code className="bg-[#f3f4f6] px-1.5 py-0.5 rounded-[2px]">SO_TAY_NGHIEP_VU.md</code> tại thư mục gốc hệ thống).
-          </p>
-        </div>
+        <CulturalSubpageBanner
+          eyebrow="TÀI LIỆU HƯỚNG DẪN VẬN HÀNH CHUẨN HÓA (USER GUIDE v2.0)"
+          title="Sổ tay Nghiệp vụ Quản lý Hành chính & Cơ chế Một cửa Liên thông"
+          description={
+            <>
+              Hướng dẫn chi tiết quy trình tác nghiệp dành cho Công dân/Tổ chức và 04 nhóm Cán bộ, Công chức nội bộ sau 7 vòng kiểm định chuyên sâu (kèm tệp{" "}
+              <code className="bg-white/80 border border-[#e5c56b] px-1.5 py-0.5 rounded-[2px]">
+                SO_TAY_NGHIEP_VU.md
+              </code>{" "}
+              tại thư mục gốc hệ thống).
+            </>
+          }
+        />
 
         {/* Phần 1: Bảng phân vai RBAC */}
         <section className="bg-white border border-[#d6d3cd] p-6 rounded-[2px] space-y-4">

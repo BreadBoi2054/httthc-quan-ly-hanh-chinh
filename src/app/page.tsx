@@ -5,7 +5,12 @@ import { evaluateDossierSla } from "@/lib/sla-engine";
 import { PublicHeader } from "@/components/PublicHeader";
 import { PublicFooter } from "@/components/PublicFooter";
 import { QuickLookupBox } from "@/components/QuickLookupBox";
-import { LotusGardenStrip } from "@/components/AdminEmblem";
+import {
+  BronzeDrumWatermark,
+  DongSonFretStrip,
+  LacBirdEmblem,
+  LotusGardenStrip,
+} from "@/components/AdminEmblem";
 import { FilePlus2, CheckCircle2, Clock, ShieldCheck, ArrowRight, BookOpen, Building2 } from "lucide-react";
 
 export const dynamic = "force-dynamic";
@@ -107,14 +112,25 @@ export default async function HomePage() {
       <PublicHeader />
 
       <main className="flex-1 bg-white">
-        {/* Khung thông điệp hành chính & Tra cứu hồ sơ trên nền Vàng kem + Hoa sen */}
+        {/* Khung thông điệp hành chính & Tra cứu hồ sơ trên nền Vàng kem + Trống đồng Đông Sơn + Đầm sen */}
         <section className="bg-[#fff1bd] border-b border-[#e5c56b] pt-7 relative overflow-hidden">
+          {/* Họa tiết Trống đồng Ngọc Lũ – Đông Sơn cỡ lớn ẩn hiện phía sau nền Vàng kem */}
+          <div className="absolute left-1/2 -translate-x-1/2 -top-16 hidden md:block">
+            <BronzeDrumWatermark size={520} className="opacity-[0.15]" />
+          </div>
+          <div className="absolute -left-28 top-6 hidden xl:block">
+            <BronzeDrumWatermark size={300} className="opacity-[0.10]" />
+          </div>
+
           <div className="max-w-7xl mx-auto px-4 sm:px-6 pb-6 grid grid-cols-1 lg:grid-cols-12 gap-6 items-start relative z-10">
             <div className="lg:col-span-7 space-y-5">
-              <div className="bg-[#fffbeb]/90 border border-[#e5c56b] border-l-4 border-l-[#ce1126] p-5 rounded-[2px]">
-                <p className="text-xs font-bold uppercase tracking-wider text-[#ce1126]">
-                  CƠ CHẾ MỘT CỬA, MỘT CỬA LIÊN THÔNG ĐIỆN TỬ • PHƯỜNG THANH NHÀN
-                </p>
+              <div className="bg-[#fffbeb]/92 border border-[#e5c56b] border-l-4 border-l-[#ce1126] p-5 rounded-[2px] relative overflow-hidden">
+                <div className="flex items-center gap-2">
+                  <LacBirdEmblem size={28} />
+                  <p className="text-xs font-bold uppercase tracking-wider text-[#ce1126]">
+                    CƠ CHẾ MỘT CỬA, MỘT CỬA LIÊN THÔNG ĐIỆN TỬ • PHƯỜNG THANH NHÀN
+                  </p>
+                </div>
                 <h1 className="text-xl sm:text-2xl font-bold text-[#991b1b] font-official-serif mt-1">
                   Công khai quy trình • Đúng hạn pháp luật • Lấy sự hài lòng làm thước đo
                 </h1>
@@ -208,16 +224,19 @@ export default async function HomePage() {
           <LotusGardenStrip />
         </section>
 
-        {/* Danh mục Thủ tục Hành chính tiêu biểu theo lĩnh vực (Nền trắng tinh khiết) */}
+        {/* Danh mục Thủ tục Hành chính tiêu biểu theo lĩnh vực (Nền trắng tinh khiết + Biểu tượng Chim Lạc) */}
         <section className="bg-white max-w-7xl mx-auto px-4 sm:px-6 py-10">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b-2 border-[#ce1126] pb-3 mb-6">
-            <div>
-              <h2 className="text-xl font-bold text-[#ce1126] uppercase font-official-serif">
-                Danh mục Thủ tục Hành chính Công bố Thực hiện
-              </h2>
-              <p className="text-sm text-[#4b5563] mt-0.5">
-                Tra cứu căn cứ pháp lý, thành phần hồ sơ bắt buộc, mức lệ phí và nộp trực tuyến ngay.
-              </p>
+            <div className="flex items-start sm:items-center gap-3">
+              <LacBirdEmblem size={42} className="mt-0.5 sm:mt-0" />
+              <div>
+                <h2 className="text-xl font-bold text-[#ce1126] uppercase font-official-serif">
+                  Danh mục Thủ tục Hành chính Công bố Thực hiện
+                </h2>
+                <p className="text-sm text-[#4b5563] mt-0.5">
+                  Tra cứu căn cứ pháp lý, thành phần hồ sơ bắt buộc, mức lệ phí và nộp trực tuyến ngay.
+                </p>
+              </div>
             </div>
             <Link
               href="/thu-tuc"
@@ -299,12 +318,17 @@ export default async function HomePage() {
           </div>
         </section>
 
+        <DongSonFretStrip />
+
         {/* Sơ đồ 5 bước quy trình Một cửa chuẩn pháp lý (Nền xám sáng phân lớp như cổng mẫu) */}
-        <section className="bg-[#f3f4f6] border-t border-[#e5e7eb] py-10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6">
-            <h2 className="text-lg font-bold text-[#991b1b] uppercase font-official-serif mb-5">
-              Quy trình Giải quyết Hồ sơ Chuẩn Cơ chế Một cửa Liên thông
-            </h2>
+        <section className="bg-[#f3f4f6] py-10 relative overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+            <div className="flex items-center gap-2.5 mb-5">
+              <LacBirdEmblem size={36} />
+              <h2 className="text-lg font-bold text-[#991b1b] uppercase font-official-serif">
+                Quy trình Giải quyết Hồ sơ Chuẩn Cơ chế Một cửa Liên thông
+              </h2>
+            </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
               {[
                 {

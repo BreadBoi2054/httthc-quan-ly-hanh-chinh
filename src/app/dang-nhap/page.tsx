@@ -4,6 +4,7 @@ import React, { Suspense, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { PublicHeader } from "@/components/PublicHeader";
 import { PublicFooter } from "@/components/PublicFooter";
+import { BronzeDrumWatermark, LacBirdEmblem } from "@/components/AdminEmblem";
 import { Shield, KeyRound, UserCog } from "lucide-react";
 
 const DEMO_ACCOUNTS = [
@@ -96,9 +97,12 @@ function LoginContent() {
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10 grid grid-cols-1 lg:grid-cols-12 gap-8">
-      <div className="lg:col-span-5 bg-white border-2 border-[#991b1b] p-6 rounded-[2px]">
-        <div className="flex items-center gap-2.5 border-b border-[#e5e7eb] pb-3 mb-5">
-          <Shield className="w-6 h-6 text-[#991b1b]" />
+      <div className="lg:col-span-5 bg-[#fffdf5] border-2 border-[#ce1126] p-6 rounded-[2px] relative overflow-hidden">
+        <div className="absolute -right-14 -bottom-14 pointer-events-none">
+          <BronzeDrumWatermark size={210} className="opacity-[0.12]" />
+        </div>
+        <div className="relative z-10 flex items-center gap-2.5 border-b border-[#e5c56b] pb-3 mb-5">
+          <Shield className="w-6 h-6 text-[#ce1126]" />
           <div>
             <h1 className="text-lg font-bold text-[#991b1b] uppercase font-official-serif">
               Xác thực Định danh Hệ thống
@@ -161,10 +165,11 @@ function LoginContent() {
       </div>
 
       {/* Bảng tài khoản vận hành thực tế 5 vai trò */}
-      <div className="lg:col-span-7 bg-white border border-[#d6d3cd] p-6 rounded-[2px]">
+      <div className="lg:col-span-7 bg-white border border-[#e5c56b] p-6 rounded-[2px] relative overflow-hidden">
         <div className="flex items-center justify-between border-b border-[#e5e7eb] pb-3 mb-4">
           <div className="flex items-center gap-2">
-            <UserCog className="w-5 h-5 text-[#991b1b]" />
+            <LacBirdEmblem size={30} />
+            <UserCog className="w-5 h-5 text-[#ce1126]" />
             <h2 className="text-base font-bold text-[#991b1b] uppercase font-official-serif">
               Danh sách Tài khoản Phân quyền Nghiệp vụ (5 Vai trò)
             </h2>

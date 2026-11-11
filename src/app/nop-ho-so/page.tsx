@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { PublicHeader } from "@/components/PublicHeader";
 import { PublicFooter } from "@/components/PublicFooter";
+import { CulturalSubpageBanner } from "@/components/AdminEmblem";
 import { CheckCircle2, FilePlus2, AlertCircle, Search, FolderArchive } from "lucide-react";
 
 interface RequiredDoc {
@@ -267,14 +268,11 @@ function SubmitDossierForm() {
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 py-8 space-y-6">
-      <div className="border-b-2 border-[#991b1b] pb-3">
-        <h1 className="text-xl sm:text-2xl font-bold text-[#991b1b] uppercase font-official-serif">
-          Nộp Hồ sơ Dịch vụ Hành chính Công Trực tuyến
-        </h1>
-        <p className="text-sm text-[#4b5563] mt-1">
-          Kê khai chính xác thông tin định danh và đính kèm đầy đủ thành phần hồ sơ bắt buộc theo quy định pháp luật.
-        </p>
-      </div>
+      <CulturalSubpageBanner
+        eyebrow="TIẾP NHẬN HỒ SƠ ĐIỆN TỬ • UBND PHƯỜNG THANH NHÀN"
+        title="Nộp Hồ sơ Dịch vụ Hành chính Công Trực tuyến"
+        description="Kê khai chính xác thông tin định danh và đính kèm đầy đủ thành phần hồ sơ bắt buộc theo quy định pháp luật."
+      />
 
       {error && (
         <div

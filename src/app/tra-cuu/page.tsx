@@ -4,6 +4,7 @@ import React, { Suspense, useCallback, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { PublicHeader } from "@/components/PublicHeader";
 import { PublicFooter } from "@/components/PublicFooter";
+import { CulturalSubpageBanner } from "@/components/AdminEmblem";
 import { DossierStatusBadge, FeeBadge, SlaBadge } from "@/components/StatusBadges";
 import { FormTemplateType, OfficialFormsPrintModal } from "@/components/OfficialFormsPrint";
 import { Search, Printer, Lock, Unlock, Star, CreditCard, Upload, XCircle } from "lucide-react";
@@ -128,14 +129,11 @@ function TrackDossierContent() {
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 py-8 space-y-6">
-      <div className="border-b-2 border-[#991b1b] pb-3">
-        <h1 className="text-xl sm:text-2xl font-bold text-[#991b1b] uppercase font-official-serif">
-          Tra cứu Tiến độ Giải quyết Hồ sơ &amp; Biểu mẫu Điện tử
-        </h1>
-        <p className="text-sm text-[#4b5563] mt-1">
-          Bảo vệ dữ liệu cá nhân: Tra cứu bằng Mã biên nhận hiển thị tiến độ chung; nhập thêm Mã PIN 6 số trên Giấy hẹn để mở khóa toàn bộ biểu mẫu in ấn và đánh giá hài lòng.
-        </p>
-      </div>
+      <CulturalSubpageBanner
+        eyebrow="GIÁM SÁT TIẾN ĐỘ THỜI GIAN THỰC • UBND PHƯỜNG THANH NHÀN"
+        title="Tra cứu Tiến độ Giải quyết Hồ sơ & Biểu mẫu Điện tử"
+        description="Bảo vệ dữ liệu cá nhân: Tra cứu bằng Mã biên nhận hiển thị tiến độ chung; nhập thêm Mã PIN 6 số trên Giấy hẹn để mở khóa toàn bộ biểu mẫu in ấn và đánh giá hài lòng."
+      />
 
       {/* Form nhập tra cứu */}
       <form

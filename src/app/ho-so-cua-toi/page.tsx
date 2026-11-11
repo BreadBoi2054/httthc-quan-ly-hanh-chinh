@@ -4,6 +4,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { PublicHeader } from "@/components/PublicHeader";
 import { PublicFooter } from "@/components/PublicFooter";
+import { CulturalSubpageBanner } from "@/components/AdminEmblem";
 import { DossierStatusBadge, FeeBadge, SlaBadge } from "@/components/StatusBadges";
 import {
   FilePlus2,
@@ -90,23 +91,20 @@ export default function CitizenPortalPage() {
     <div className="min-h-screen flex flex-col">
       <PublicHeader />
       <main className="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-8 space-y-6">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b-2 border-[#991b1b] pb-3">
-          <div>
-            <h1 className="text-xl font-bold text-[#991b1b] uppercase font-official-serif">
-              Kho Hồ sơ Hành chính Cá nhân
-            </h1>
-            <p className="text-sm text-[#4b5563]">
-              Theo dõi tiến độ, thanh toán lệ phí trực tuyến, nộp bổ sung giấy tờ và nhận kết quả điện tử.
-            </p>
-          </div>
-          <Link
-            href="/nop-ho-so"
-            className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-bold bg-[#991b1b] hover:bg-[#7f1d1d] text-white rounded-[2px]"
-          >
-            <FilePlus2 className="w-4 h-4" />
-            Nộp hồ sơ mới
-          </Link>
-        </div>
+        <CulturalSubpageBanner
+          eyebrow="TÀI KHOẢN CÔNG DÂN ĐIỆN TỬ • UBND PHƯỜNG THANH NHÀN"
+          title="Kho Hồ sơ Hành chính Cá nhân"
+          description="Theo dõi tiến độ, thanh toán lệ phí trực tuyến, nộp bổ sung giấy tờ và nhận kết quả điện tử."
+          action={
+            <Link
+              href="/nop-ho-so"
+              className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-bold bg-[#ce1126] hover:bg-[#991b1b] text-white rounded-[2px]"
+            >
+              <FilePlus2 className="w-4 h-4" />
+              Nộp hồ sơ mới
+            </Link>
+          }
+        />
 
         {feedback && (
           <div

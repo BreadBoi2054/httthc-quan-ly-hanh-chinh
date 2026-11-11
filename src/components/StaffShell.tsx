@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { AdminEmblem } from "./AdminEmblem";
+import { AdminEmblem, BronzeDrumWatermark, DongSonFretStrip } from "./AdminEmblem";
 import { ROLE_LABELS } from "@/lib/workflow-engine";
 import { Role } from "@prisma/client";
 import {
@@ -145,12 +145,18 @@ export function StaffShell({
   function renderSidebar(isCompact: boolean) {
     return (
       <div
-        className={`flex flex-col h-full bg-[#fffdf5] border-r border-[#e5c56b] shrink-0 transition-[width] duration-150 ${
+        className={`relative overflow-hidden flex flex-col h-full bg-[#fffdf5] border-r border-[#e5c56b] shrink-0 transition-[width] duration-150 ${
           isCompact ? "w-16" : "w-64"
         }`}
       >
+        {!isCompact && (
+          <div className="absolute -bottom-16 -left-12 pointer-events-none">
+            <BronzeDrumWatermark size={220} className="opacity-[0.11]" />
+          </div>
+        )}
+
         {/* Đầu mục cơ quan */}
-        <div className="p-3.5 border-b-2 border-[#ce1126] bg-[#fce8a6] text-[#3f1d14] flex items-center justify-between gap-2">
+        <div className="p-3.5 border-b-2 border-[#ce1126] bg-[#fce8a6] text-[#3f1d14] flex items-center justify-between gap-2 relative z-10">
           <div className="flex items-center gap-2.5 min-w-0">
             <AdminEmblem size={isCompact ? 30 : 36} />
             {!isCompact && (
@@ -172,6 +178,8 @@ export function StaffShell({
             {isCompact ? <PanelLeftOpen className="w-4 h-4" /> : <PanelLeftClose className="w-4 h-4" />}
           </button>
         </div>
+
+        {!isCompact && <DongSonFretStrip className="relative z-10 border-t-0" />}
 
         {/* Định danh cán bộ đang đăng nhập */}
         {!isCompact && (

@@ -1,11 +1,15 @@
 import React from "react";
 import Link from "next/link";
-import { AdminEmblem } from "./AdminEmblem";
+import { AdminEmblem, BronzeDrumWatermark, DongSonFretStrip } from "./AdminEmblem";
 
 export function PublicFooter() {
   return (
-    <footer className="no-print mt-auto bg-[#fce8a6] text-[#3f1d14] border-t-4 border-[#ce1126]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 grid grid-cols-1 md:grid-cols-12 gap-8">
+    <footer className="no-print mt-auto bg-[#fce8a6] text-[#3f1d14] border-t-4 border-[#ce1126] relative overflow-hidden">
+      <DongSonFretStrip className="relative z-10 border-t-0" />
+      <div className="absolute -right-16 -bottom-20 hidden md:block">
+        <BronzeDrumWatermark size={310} className="opacity-[0.15]" />
+      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 grid grid-cols-1 md:grid-cols-12 gap-8 relative z-10">
         <div className="md:col-span-6 space-y-2">
           <div className="flex items-center gap-3">
             <AdminEmblem size={42} />

@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { AdminEmblem, BronzeDrumWatermark } from "./AdminEmblem";
+import { AdminEmblem, BronzeDrumWatermark, DongSonFretStrip } from "./AdminEmblem";
 import {
   LogOut,
   UserCheck,
@@ -69,12 +69,16 @@ export function PublicHeader() {
 
   return (
     <header className="no-print bg-[#fce8a6] text-[#3f1d14] relative overflow-hidden border-b border-[#e5c56b]">
-      <div className="absolute left-1/2 -translate-x-1/2 -top-10 hidden md:block">
-        <BronzeDrumWatermark />
+      {/* Mặt Trống đồng Ngọc Lũ – Đông Sơn chìm trang trọng giữa nền Vàng kem */}
+      <div className="absolute left-[55%] -translate-x-1/2 -top-24 hidden md:block">
+        <BronzeDrumWatermark size={380} className="opacity-[0.20]" />
+      </div>
+      <div className="absolute -right-20 -top-16 hidden xl:block">
+        <BronzeDrumWatermark size={240} className="opacity-[0.11]" />
       </div>
 
       {/* Dải thông tin công vụ trên cùng */}
-      <div className="bg-[#f8dc81] border-b border-[#e4be58] text-xs text-[#7f1d1d]">
+      <div className="bg-[#f8dc81] text-xs text-[#7f1d1d] relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-1.5 flex flex-wrap items-center justify-between gap-2">
           <div className="font-semibold tracking-wide">
             CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM • Độc lập - Tự do - Hạnh phúc
@@ -86,6 +90,9 @@ export function PublicHeader() {
           </div>
         </div>
       </div>
+
+      {/* Đường diềm Hồi văn Kỷ hà Đông Sơn */}
+      <DongSonFretStrip className="relative z-10" />
 
       {/* Quốc hiệu & Tên hệ thống trên nền Vàng kem, chữ Đỏ cờ */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-4">

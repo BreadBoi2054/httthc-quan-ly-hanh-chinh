@@ -164,3 +164,13 @@
 ## [Cập Nhật Giao Diện v2.1] Chuyển Đổi Tông Màu Vàng Kem – Đỏ Cờ – Hoa Sen & Đổi Đơn Vị Sang UBND Phường Thanh Nhàn
 - Giữ nguyên cấu trúc bố cục giao diện đã ổn định, chuyển đổi đồng bộ toàn bộ bảng màu từ tông Xanh đậm (`#1E3A5F`) cũ sang hệ màu **Cổng Dịch vụ công Vàng kem Hoàng gia (`#FCE8A6` / `#FFF1BD`) + Thanh điều hướng Đỏ cờ tươi (`#D71920` / `#CE1126`) + Họa tiết Hoa sen & Trống đồng SVG (`LotusGardenStrip`) + Phân lớp nền Trắng sáng (`#FFFFFF`) & Xám sáng (`#F3F4F6`)**.
 - Đổi đồng bộ 100% đơn vị hành chính sang **UBND Phường Thanh Nhàn** (Thành phố Hà Nội, mã vùng điện thoại `(024) 3971 0101`, địa chỉ phố Thanh Nhàn / Kim Ngưu / Võ Thị Sáu / Trần Khát Chân) trên toàn bộ Header, Footer, Bàn làm việc nội bộ, 06 Biểu mẫu in khổ A4, API Kho dữ liệu số, dữ liệu mẫu PostgreSQL (`prisma/seed.ts`) và tài liệu hướng dẫn.
+
+---
+
+## [Cập Nhật Giao Diện v2.2] Bổ Sung Hệ Họa Tiết Di Sản Văn Hóa Việt Nam (Trống Đồng Ngọc Lũ – Đông Sơn, Chim Lạc, Đường Diềm Hồi Văn & Đầm Sen Đa Tầng)
+- Thiết kế mới bằng **100% inline SVG thuần** trong `src/components/AdminEmblem.tsx` (không tải tệp ảnh ngoài, giữ tốc độ tải tức thời và sắc nét ở mọi độ phân giải):
+  - **`BronzeDrumWatermark`**: Mặt **Trống đồng Ngọc Lũ – Đông Sơn** đồng tâm chi tiết cao gồm Mặt trời 14 tia trung tâm, tam giác lông công xen kẽ, vòng hạt châu, vòng tròn tiếp tuyến chấm tâm, 02 vành răng cưa kỷ hà, vành vạch khắc ngoài và đàn **08 Chim Lạc sải cánh ngược chiều kim đồng hồ** xen kẽ hoa văn trám lồng.
+  - **`LacBirdEmblem`**: Biểu tượng **Chim Lạc đỏ cờ – vàng đồng** vươn cánh đặt trang trọng bên cạnh các tiêu đề chuyên mục lớn và tiêu đề chuyên trang.
+  - **`DongSonFretStrip`**: Đường diềm **Hồi văn chữ S gãy & trám lồng Đông Sơn** chạy ngang dưới dải Quốc hiệu Header, giữa các phân khu chính, trên chân trang Footer và thanh điều hướng nội bộ.
+  - **`LotusGardenStrip` (nâng cấp)**: Toàn cảnh **Đầm Sen Việt Nam** đa tầng gồm 07 đóa sen hồng mãn khai, 03 búp sen hồng, 03 gương sen vàng và hệ lá sen xanh ngọc có gân lá tự nhiên (`preserveAspectRatio="xMidYMax slice"` chống biến dạng tỷ lệ cánh hoa trên mọi kích thước màn hình).
+  - **`CulturalSubpageBanner`**: Đồng bộ khung tiêu đề mang họa tiết Trống đồng & Chim Lạc trên toàn bộ các trang `/thu-tuc`, `/nop-ho-so`, `/tra-cuu`, `/ho-so-cua-toi`, `/so-tay-nghiep-vu`, `/dang-nhap` và `StaffShell.tsx`, đồng thời gắn lớp `.no-print` đảm bảo khi in 06 biểu mẫu hành chính khổ A4 vẫn giữ nguyên chuẩn mực đen trắng công vụ.
