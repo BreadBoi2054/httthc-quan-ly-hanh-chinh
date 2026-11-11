@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+:root {
+  /* Bảng màu chuẩn Cổng Hành chính Công Việt Nam (Đỏ Quốc kỳ - Vàng đồng - Giấy công vụ) */
+  --vn-crimson: #991b1b;
+  --vn-crimson-dark: #7f1d1d;
+  --vn-crimson-soft: #fef2f2;
+  --vn-gold: #d97706;
+  --vn-gold-bright: #f59e0b;
+  --vn-gold-pale: #fef3c7;
+  --vn-navy: #1e3a5f;
+  --vn-paper: #f7f5f0;
+  --vn-sheet: #ffffff;
+  --vn-ink: #111827;
+  --vn-muted: #4b5563;
+  --vn-border: #d6d3cd;
+  --vn-positive: #15803d;
+  --vn-warning: #b45309;
+  --vn-danger: #b91c1c;
+}
+
+html,
+body {
+  background-color: var(--vn-paper);
+  color: var(--vn-ink);
+  font-family: var(--font-sans-vn), "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: #fef3c7;
+  color: #7f1d1d;
+}
+
+:focus-visible {
+  outline: 2px solid #991b1b;
+  outline-offset: 2px;
+}
+
+.font-official-serif {
+  font-family: var(--font-serif-vn), "Times New Roman", Georgia, serif;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Chế độ In biểu mẫu hành chính khổ A4 chuẩn Nghị định 30/2020 & 61/2018 */
+@page {
+  size: A4 portrait;
+  margin: 12mm 15mm;
+}
+
+@media print {
+  html,
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 12pt;
+    overflow: visible !important;
+    height: auto !important;
+  }
+
+  /* Khi đang mở biểu mẫu in A4 qua Portal, ẩn toàn bộ giao diện nền phía sau */
+  body.printing-form > *:not(.official-print-portal) {
+    display: none !important;
+  }
+
+  .official-print-portal,
+  .official-print-backdrop,
+  .official-print-card {
+    position: static !important;
+    overflow: visible !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .a4-print-sheet {
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  table,
+  tr,
+  .signature-block {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}

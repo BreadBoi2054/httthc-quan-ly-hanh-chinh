@@ -1,0 +1,40 @@
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: httthc-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: httthc_admin
+      POSTGRES_PASSWORD: httthc_secure_2026
+      POSTGRES_DB: httthc_portal
+      TZ: Asia/Ho_Chi_Minh
+    ports:
+      - "54322:5432"
+    volumes:
+      - httthc_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U httthc_admin -d httthc_portal"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: httthc-web
+    profiles:
+      - full-docker
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql://httthc_admin:httthc_secure_2026@db:5432/httthc_portal?schema=public
+      JWT_SECRET: httthc-mot-cua-lien-thong-secret-key-2026-vn
+      NODE_ENV: production
+    ports:
+      - "3000:3000"
+
+volumes:
+  httthc_pgdata:

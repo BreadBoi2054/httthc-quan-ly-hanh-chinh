@@ -1,0 +1,338 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  CONG_DAN
+  MOT_CUA
+  CHUYEN_VIEN
+  LANH_DAO
+  QUAN_TRI
+}
+
+enum ServiceLevel {
+  MOT_PHAN
+  TOAN_TRINH
+}
+
+enum SubmissionChannel {
+  TRUC_TUYEN
+  TRUC_TIEP
+  BUU_CHINH
+}
+
+enum DossierStatus {
+  MOI_NOP
+  DA_TIEP_NHAN
+  YEU_CAU_BO_SUNG
+  DANG_THAM_DINH
+  CHO_PHE_DUYET
+  CHO_TRA_KET_QUA
+  HOAN_THANH
+  TU_CHOI_TIEP_NHAN
+  DA_RUT_HO_SO
+}
+
+enum FeeStatus {
+  MIEN_PHI
+  CHUA_THU_PHI
+  DA_THU_PHI
+  HOAN_PHI
+}
+
+enum AttachmentType {
+  BAN_CHINH
+  BAN_SAO_CHUNG_THUC
+  BAN_DIEN_TU
+}
+
+enum DocDirection {
+  DEN
+  DI
+}
+
+enum DocType {
+  QUYET_DINH
+  CONG_VAN
+  TO_TRINH
+  THONG_BAO
+  BAO_CAO
+  KE_HOACH
+  GIAY_XAC_NHAN
+}
+
+enum UrgencyLevel {
+  THUONG
+  KHAN
+  THUONG_KHAN
+  HOA_TOC
+}
+
+enum SecurityLevel {
+  THUONG
+  MAT
+  TOI_MAT
+}
+
+enum DocStatus {
+  MOI_TIEP_NHAN
+  CHO_BUT_PHE
+  DANG_XU_LY
+  CHO_KY_BAN_HANH
+  DA_BAN_HANH
+  LUU_TRU
+}
+
+enum SatisfactionRating {
+  RAT_HAI_LONG
+  HAI_LONG
+  BINH_THUONG
+  CHUA_HAI_LONG
+}
+
+model Department {
+  id          String             @id @default(cuid())
+  code        String             @unique
+  name        String
+  headTitle   String
+  phoneExt    String
+  roomNumber  String
+  isActive    Boolean            @default(true)
+  createdAt   DateTime           @default(now())
+  users       User[]
+  procedures  Procedure[]
+  dossiers    Dossier[]
+  documents   OfficialDocument[]
+}
+
+model User {
+  id                String             @id @default(cuid())
+  username          String             @unique
+  email             String             @unique
+  passwordHash      String
+  fullName          String
+  citizenId         String?
+  phone             String
+  address           String?
+  positionTitle     String?
+  role              Role               @default(CONG_DAN)
+  departmentId      String?
+  department        Department?        @relation(fields: [departmentId], references: [id])
+  isActive          Boolean            @default(true)
+  createdAt         DateTime           @default(now())
+  submittedDossiers Dossier[]          @relation("ApplicantDossiers")
+  receivedDossiers  Dossier[]          @relation("ReceiverDossiers")
+  assignedDossiers  Dossier[]          @relation("AssigneeDossiers")
+  approvedDossiers  Dossier[]          @relation("ApproverDossiers")
+  assignedDocs      OfficialDocument[] @relation("AssigneeDocs")
+  createdDocs       OfficialDocument[] @relation("CreatorDocs")
+
+  @@index([role])
+  @@index([departmentId])
+}
+
+model Holiday {
+  id          String   @id @default(cuid())
+  dateStr     String   @unique
+  name        String
+  year        Int
+  createdAt   DateTime @default(now())
+
+  @@index([year])
+}
+
+model Procedure {
+  id               String       @id @default(cuid())
+  code             String       @unique
+  name             String
+  field            String
+  serviceLevel     ServiceLevel @default(TOAN_TRINH)
+  processingDays   Int
+  processingHours  Int
+  feeAmount        Int          @default(0)
+  feePerCopy       Boolean      @default(false)
+  feeExemptionNote String?
+  legalBasis       String
+  executionSteps   String
+  requiredDocsJson String
+  resultTemplate   String
+  departmentId     String
+  department       Department   @relation(fields: [departmentId], references: [id])
+  isActive         Boolean      @default(true)
+  createdAt        DateTime     @default(now())
+  dossiers         Dossier[]
+
+  @@index([field])
+  @@index([departmentId])
+}
+
+model Dossier {
+  id                      String              @id @default(cuid())
+  dossierCode             String              @unique
+  trackingPin             String
+  procedureId             String
+  procedure               Procedure           @relation(fields: [procedureId], references: [id])
+  departmentId            String
+  department              Department          @relation(fields: [departmentId], references: [id])
+  applicantId             String?
+  applicant               User?               @relation("ApplicantDossiers", fields: [applicantId], references: [id])
+  applicantName           String
+  applicantCitizenId      String
+  applicantPhone          String
+  applicantEmail          String?
+  applicantAddress        String
+  applicantBirthYear      Int?
+  representativeName      String?
+  representativeCitizenId String?
+  authorizationNote       String?
+  channel                 SubmissionChannel   @default(TRUC_TUYEN)
+  status                  DossierStatus       @default(MOI_NOP)
+  summary                 String
+  copiesCount             Int                 @default(1)
+  feeAmount               Int                 @default(0)
+  feeExempt               Boolean             @default(false)
+  feeExemptReason         String?
+  feeStatus               FeeStatus           @default(MIEN_PHI)
+  paymentMethod           String?
+  receiptNumber           String?             @unique
+  paidAt                  DateTime?
+  submittedAt             DateTime            @default(now())
+  acceptedAt              DateTime?
+  dueAt                   DateTime?
+  slaPausedAt             DateTime?
+  totalPausedMinutes      Int                 @default(0)
+  supplementCount         Int                 @default(0)
+  extendedCount           Int                 @default(0)
+  apologyFormCode         String?
+  apologyReason           String?
+  completedAt             DateTime?
+  receiverId              String?
+  receiver                User?               @relation("ReceiverDossiers", fields: [receiverId], references: [id])
+  assigneeId              String?
+  assignee                User?               @relation("AssigneeDossiers", fields: [assigneeId], references: [id])
+  approverId              String?
+  approver                User?               @relation("ApproverDossiers", fields: [approverId], references: [id])
+  supplementReason        String?
+  supplementDeadline      DateTime?
+  rejectionReason         String?
+  rejectionLegalBasis     String?
+  appraisalNote           String?
+  leaderNote              String?
+  resultDocNumber         String?
+  resultSummary           String?
+  isDigitizedResult       Boolean             @default(false)
+  electronicResultCode    String?
+  signedAt                DateTime?
+  satisfactionRating      SatisfactionRating?
+  satisfactionComment     String?
+  ratedAt                 DateTime?
+  createdAt               DateTime            @default(now())
+  updatedAt               DateTime            @updatedAt
+  attachments             DossierAttachment[]
+  histories               DossierHistory[]
+  linkedDocuments         OfficialDocument[]
+
+  @@index([status])
+  @@index([departmentId])
+  @@index([applicantCitizenId])
+  @@index([dueAt])
+}
+
+model DossierAttachment {
+  id            String         @id @default(cuid())
+  dossierId     String
+  dossier       Dossier        @relation(fields: [dossierId], references: [id], onDelete: Cascade)
+  docCode       String
+  docName       String
+  isMandatory   Boolean        @default(true)
+  submittedType AttachmentType @default(BAN_DIEN_TU)
+  quantity      Int            @default(1)
+  fileName        String?
+  fileSizeKb      Int            @default(120)
+  isVerified      Boolean        @default(false)
+  reusedFromVault Boolean        @default(false)
+  verifyNote      String?
+  createdAt     DateTime       @default(now())
+
+  @@index([dossierId])
+}
+
+model DossierHistory {
+  id         String         @id @default(cuid())
+  dossierId  String
+  dossier    Dossier        @relation(fields: [dossierId], references: [id], onDelete: Cascade)
+  fromStatus DossierStatus?
+  toStatus   DossierStatus
+  actionName String
+  actorId    String?
+  actorName  String
+  actorRole  String
+  note       String
+  createdAt  DateTime       @default(now())
+
+  @@index([dossierId, createdAt])
+}
+
+model OfficialDocument {
+  id                 String        @id @default(cuid())
+  direction          DocDirection
+  incomingNumber     Int?
+  outgoingNumber     Int?
+  documentSymbol     String        @unique
+  docType            DocType
+  urgency            UrgencyLevel  @default(THUONG)
+  security           SecurityLevel @default(THUONG)
+  status             DocStatus     @default(MOI_TIEP_NHAN)
+  title              String
+  contentSummary     String
+  issuingAgency      String
+  recipientAgency    String
+  signerName         String?
+  signerTitle        String?
+  issuedDate         DateTime
+  receivedDate       DateTime?
+  processingDeadline DateTime?
+  directiveNote      String?
+  resolutionNote     String?
+  leadDepartmentId   String?
+  leadDepartment     Department?   @relation(fields: [leadDepartmentId], references: [id])
+  assigneeId         String?
+  assignee           User?         @relation("AssigneeDocs", fields: [assigneeId], references: [id])
+  linkedDossierId    String?
+  linkedDossier      Dossier?      @relation(fields: [linkedDossierId], references: [id])
+  createdById        String
+  createdBy          User          @relation("CreatorDocs", fields: [createdById], references: [id])
+  createdAt          DateTime      @default(now())
+  updatedAt          DateTime      @updatedAt
+
+  @@index([direction, status])
+  @@index([direction, outgoingNumber])
+  @@index([leadDepartmentId])
+}
+
+model SequenceCounter {
+  key       String   @id
+  value     Int      @default(0)
+  updatedAt DateTime @updatedAt
+}
+
+model AuditLog {
+  id         String   @id @default(cuid())
+  actorId    String?
+  actorName  String
+  actorRole  String
+  action     String
+  entityType String
+  entityCode String
+  detail     String
+  ipAddress  String   @default("127.0.0.1")
+  createdAt  DateTime @default(now())
+
+  @@index([createdAt])
+  @@index([entityType, entityCode])
+}
